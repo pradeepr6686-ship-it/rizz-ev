@@ -122,51 +122,62 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
-  /* Keep the header compact and clean */
+  /* Keep the main header card compact */
   header, .navbar, .nav-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    width: 92% !important;
-    max-width: 92% !important;
-    margin: 10px auto !important;
-    padding: 12px !important;
-    border-radius: 16px !important;
+    width: 94% !important;
+    max-width: 94% !important;
+    margin: 8px auto !important;
+    padding: 10px !important;
+    border-radius: 14px !important;
     box-sizing: border-box !important;
   }
 
-  /* Center and space out the logo */
+  /* Center the logo neatly */
   .logo, .nav-logo {
-    margin-bottom: 8px !important;
+    margin-bottom: 5px !important;
   }
 
-  /* Arrange nav links in a tight, clean horizontal row with wrapping or smaller font */
+  /* Turn the links into a clean horizontal scrolling bar */
   .nav-links, .nav-menu, nav ul {
     display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 6px 12px !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
     width: 100% !important;
-    margin: 5px 0 10px 0 !important;
-    padding: 0 !important;
+    gap: 8px !important;
+    margin: 5px 0 !important;
+    padding: 4px 2px !important;
     list-style: none !important;
+    scrollbar-width: none; /* Hide scrollbar for clean look */
   }
 
-  /* Shrink text slightly so all 5 links fit comfortably */
+  .nav-links::-webkit-scrollbar, .nav-menu::-webkit-scrollbar, nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Style each link like a neat little mobile tab/pill */
   .nav-links a, .nav-menu a, nav ul li a {
+    flex: 0 0 auto !important;
     font-size: 13px !important;
-    font-weight: 500 !important;
-    padding: 4px 6px !important;
-    color: #0d1b2a !important;
+    padding: 5px 10px !important;
+    background: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    border-radius: 20px !important;
+    color: #059669 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
   }
 
-  /* Make the Get Started button fit nicely */
+  /* Keep the Call-to-Action button compact */
   .nav-cta, header .btn, .navbar .btn {
     width: 100% !important;
-    padding: 8px 16px !important;
-    font-size: 14px !important;
+    padding: 7px 12px !important;
+    font-size: 13px !important;
     text-align: center !important;
-    margin-top: 5px !important;
+    margin-top: 4px !important;
   }
 }
 
