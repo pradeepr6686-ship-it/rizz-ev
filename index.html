@@ -31,6 +31,13 @@
         <li><a href="investors.html">Fleet Owners</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
+<!-- Mobile Hamburger Button -->
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 </nav>
 
     <div class="nav-right">
@@ -707,6 +714,22 @@
         }
     });
 </script>
+
+<!-- Your existing page content and closing elements -->
+
+    <!-- Embedded Hamburger Menu Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const navMenu = document.querySelector(".nav-links") || document.querySelector(".nav-menu") || document.querySelector("nav ul");
+
+        if (hamburgerBtn && navMenu) {
+          hamburgerBtn.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+          });
+        }
+      });
+    </script>
 
 </body>
 </html>
