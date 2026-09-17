@@ -1815,8 +1815,8 @@ nav ul li a:hover {
     transition: all 0.3s ease;
   }
 
-  /* Hide navigation links by default on mobile */
-  .nav-links {
+  /* FORCE hide navigation links by default on mobile */
+  nav ul, .nav-links {
     display: none !important;
     flex-direction: column !important;
     width: 100% !important;
@@ -1832,22 +1832,21 @@ nav ul li a:hover {
     z-index: 999;
   }
 
-  /* When JS adds .active class, show the dropdown menu */
-  .nav-links.active {
+  /* When JavaScript adds .active class, show the menu */
+  nav ul.active, .nav-links.active {
     display: flex !important;
   }
 
-  .nav-links li {
+  nav ul li {
     margin: 10px 0;
   }
 
-  .nav-links li a {
+  nav ul li a {
     font-size: 16px !important;
     color: #0f172a !important;
     font-weight: 600;
   }
 
-  /* Hide desktop CTA button inside navbar on small mobile screens if needed, or keep it compact */
   .nav-right {
     display: none; 
   }
