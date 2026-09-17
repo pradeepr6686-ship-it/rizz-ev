@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Rental Agreement | RIZZ EV</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts import to match index.html typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           FLOATING NAVBAR
+        ========================================= */
+        .navbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1300px;
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 35px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #10b981;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #047857;
+        }
+
+        .btn-primary {
+            background: #00c853;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           PAGE STYLES
+        ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #080c14;
+            color: #cbd5e1;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 150px 6% 80px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-header h1 {
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        .agreement-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .agreement-section {
+            margin-bottom: 35px;
+        }
+
+        .agreement-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .agreement-section h2 {
+            color: #00e676;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .agreement-section p {
+            color: #cbd5e1;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .agreement-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .agreement-section ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .agreement-section ul li::before {
+            content: "•";
+            color: #00e676;
+            font-weight: bold;
+            font-size: 18px;
+            position: absolute;
+            left: 5px;
+            top: -2px;
+        }
+
+        .highlight-box {
+            background: rgba(0, 230, 118, 0.05);
+            border-left: 4px solid #00e676;
+            padding: 15px 20px;
+            border-radius: 4px 12px 12px 4px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+
+        /* =========================================
+   EXACT INDEX.HTML MATCHING FOOTER CSS
+========================================= */
+.rizz-footer {
+    background: linear-gradient(180deg, #0d131f 0%, #080c14 100%);
+    color: #94a3b8;
+    padding: 80px 8% 30px;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rizz-footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+    gap: 50px;
+    padding-bottom: 60px;
+}
+
+.footer-logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.rizz-manifesto {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    max-width: 310px;
+    font-weight: 500;
+}
+
+/* Social Buttons with Green Glow Effect */
+.rizz-social-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: #00e676;
+    color: #080c14;
+    border-color: #00e676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); /* Green Glow */
+    transform: translateY(-3px);
+}
+
+/* Section Column Headers */
+.col-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800; /* Bolder to match Image 2 */
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 14px;
+    letter-spacing: -0.3px;
+}
+
+.col-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 18px;
+    background: #00e676;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.6); /* Glowing accent line */
+}
+
+/* Navigation & Policy Links with Green Glow Hover */
+.rizz-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rizz-nav-list li {
+    margin-bottom: 14px;
+}
+
+.rizz-nav-list a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.rizz-nav-list a:hover {
+    color: #00e676;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4); /* Text Glow */
+    transform: translateX(4px);
+}
+
+/* Contact Info Styling */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px rgba(0, 230, 118, 0.3));
+}
+
+.contact-item a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #00e676;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+}
+
+/* Bottom Bar Badge */
+.rizz-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.pill-badge {
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    color: #00e676;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.15);
+}
+
+@media (max-width: 992px) {
+    .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+    .rizz-footer-wrapper { grid-template-columns: 1fr; }
+    .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html#home" class="logo">
+            <img src="images/logo.png" alt="RIZZ EV Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Rizz EV</a></li>
+                <li><a href="riders.html">Rider Portal</a></li>
+                <li><a href="investors.html">Fleet Owners</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <a href="riders.html" class="btn-primary">Apply for Bike</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Vehicle Rental Agreement</h1>
+            <p>Official Commercial EV Rider Agreement | RIZZ EV Fleet</p>
+        </div>
+
+        <div class="agreement-card">
+            
+            <div class="agreement-section">
+                <h2><i class="fas fa-handshake"></i> 1. Parties & Purpose</h2>
+                <p>This Vehicle Rental Agreement is entered into between <strong>RIZZ EV</strong> ("Company") and the assigned rider ("Rider"). Taking possession of a RIZZ EV electric vehicle constitutes full legal acceptance of all terms detailed below.</p>
+            </div>
+
+            <div class="agreement-section">
+                <h2><i class="fas fa-user-shield"></i> 2. Rider Qualification & Eligibility</h2>
+                <p>The Rider explicitly confirms that they fulfill all standard eligibility criteria:</p>
+                <ul>
+                    <li>The Rider is 18 years of age or older.</li>
+                    <li>The Rider has submitted valid, legal government identification (Aadhaar Card or other government-issued ID).</li>
+                    <li>The Rider agrees to strictly obey all applicable traffic rules, speed regulations, and local safety standards.</li>
+                </ul>
+            </div>
+
+            <div class="agreement-section">
+                <h2><i class="fas fa-ban"></i> 3. Vehicle Care, Modifications & Misuse Policy</h2>
+                <p>The vehicle remains the exclusive property of RIZZ EV at all times. The Rider agrees to the following usage standards:</p>
+                <ul>
+                    <li><strong>Strict Modification Ban:</strong> The Rider shall not modify, alter, customize, open battery compartments, or adjust any electrical/mechanical parts of the vehicle.</li>
+                    <li><strong>Misuse Prohibited:</strong> Misuse, aggressive off-roading, stunting, overloading, or sub-leasing the vehicle to third parties is strictly prohibited.</li>
+                    <li><strong>Damage Liability:</strong> If the vehicle suffers damage due to accidents, negligence, rash driving, or tampering, the Rider must pay full damage penalties and repair costs assessed by RIZZ EV.</li>
+                </ul>
+            </div>
+
+            <div class="agreement-section">
+                <h2><i class="fas fa-money-check-alt"></i> 4. Onboarding Fee & Fare Schedule</h2>
+                <div class="highlight-box">
+                    <strong>Important Note on Onboarding Fees:</strong> The onboarding fee paid during sign-up is strictly non-refundable once the Rider has taken possession of the electric bike.
+                </div>
+                <ul>
+                    <li><strong>Rental Due Dates:</strong> Rent must be paid according to the assigned daily/weekly schedule.</li>
+                    <li><strong>Market Rate Adjustments:</strong> The Company reserves the right to adjust rental rates dynamically in response to market conditions, inflation, or industry operational fare increases.</li>
+                </ul>
+            </div>
+
+            <div class="agreement-section">
+                <h2><i class="fas fa-truck-pickup"></i> 5. Non-Payment, Recovery & Dues Assessment</h2>
+                <p>In the event of rental payment default:</p>
+                <ul>
+                    <li><strong>Authority to Recover:</strong> If the Rider fails to pay the required rent on time, the Company holds immediate legal authority to immobilize and repossess the vehicle.</li>
+                    <li><strong>Settlement of Pending Dues:</strong> Upon vehicle recovery, the Company will calculate and collect all outstanding rental dues along with applicable repossession and damage penalties.</li>
+                </ul>
+            </div>
+
+            <div class="agreement-section">
+                <h2><i class="fas fa-tools"></i> 6. Maintenance, Repairs & Bike Replacement</h2>
+                <p>To ensure long-term vehicle health and rider safety:</p>
+                <ul>
+                    <li><strong>Technical Maintenance Cooperation:</strong> If the bike requires routine servicing or unexpected technical repairs, the Rider must fully cooperate with Company technicians and present the vehicle at the designated RIZZ EV hub.</li>
+                    <li><strong>Replacement Allocation:</strong> In the event of a required repair, subject to availability, the Company will assign the Rider an alternate operational bike as quickly as possible to prevent work disruption.</li>
+                </ul>
+            </div>
+
+            <div class="agreement-section">
+                <h2><i class="fas fa-file-signature"></i> 7. Acknowledgment</h2>
+                <p>By signing the physical or digital onboarding form, paying the onboarding fee, or driving a RIZZ EV vehicle off the hub premises, the Rider acknowledges that they have read, understood, and agreed to be bound by every clause of this agreement.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="rizz-footer">
+    <div class="rizz-footer-wrapper">
+        
+        <!-- Left Brand & Socials -->
+        <div class="rizz-f-col brand-col">
+            <a href="index.html#home">
+                <img src="images/logo.png" alt="RIZZ EV Logo" class="footer-logo-img">
+            </a>
+            <p class="rizz-manifesto">
+                Redefining urban logistics across India. Empowering daily delivery partners with smart, affordable electric fleets.
+            </p>
+            <div class="rizz-social-row">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/rapx_ev" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://wa.me/918884446804" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="rizz-f-col">
+            <h4 class="col-title">Navigation</h4>
+            <ul class="rizz-nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="riders.html">Rider Portal</a></li>
+                <li><a href="investors.html">Fleet Owners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Policies Links -->
+        <div class="rizz-f-col">
+            <h4 class="col-title">Policies</h4>
+            <ul class="rizz-nav-list">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="rental-agreement.html">Rental Agreement</a></li>
+                <li><a href="fleet-investor-policy.html">Fleet Investor Policy</a></li>
+                 <li><a href="support-faq.html">Support & FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="rizz-f-col contact-col">
+            <h4 class="col-title">Get In Touch</h4>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Bommanahalli,<br>Bangalore, Karnataka 560068</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>+91 88844 46804</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info.rizzev@gmail.com&su=Inquiry%20regarding%20RIZZ%20EV" target="_blank" rel="noopener noreferrer">info.rizzev@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rizz-footer-bottom">
+        <p>© 2026 rizz ev. All rights reserved.</p>
+        <span class="pill-badge">⚡ Zero Emission Fleet Platform</span>
+    </div>
+</footer>
+
+<script>
+    // 1. Force browser to handle manual scroll restoration so it doesn't auto-remember on refresh
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // 2. Save scroll position on scroll
+    window.addEventListener('scroll', function() {
+        if (history.replaceState) {
+            history.replaceState({ scroll: window.scrollY }, document.title);
+        }
+    }, { passive: true });
+
+    // 3. Clear state on a fresh page load/refresh so it forces the top
+    window.addEventListener('DOMContentLoaded', function() {
+        // If the user just hit refresh, clear the history state scroll memory
+        if (performance.navigation.type === 1 || window.performance?.getEntriesByType("navigation")[0]?.type === "reload") {
+            window.scrollTo(0, 0);
+            if (history.replaceState) {
+                history.replaceState({ scroll: 0 }, document.title);
+            }
+        }
+    });
+
+    // 4. Restore exact position ONLY when using the Back button
+    window.addEventListener('pageshow', function(event) {
+        const isReload = performance.navigation.type === 1;
+        if (!isReload && history.state && history.state.scroll !== undefined) {
+            window.scrollTo(0, history.state.scroll);
+        }
+    });
+</script>
+
+</body>
+</html>

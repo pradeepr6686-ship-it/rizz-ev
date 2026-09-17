@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ | RIZZ EV</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts import to match index.html typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           FLOATING NAVBAR
+        ========================================= */
+        .navbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1300px;
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 35px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #10b981;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #047857;
+        }
+
+        .btn-primary {
+            background: #00c853;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           PAGE STYLES
+        ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #080c14;
+            color: #cbd5e1;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 150px 6% 80px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-header h1 {
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        /* QUICK CONTACT CARDS */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .support-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            border-color: #00e676;
+        }
+
+        .support-card i {
+            font-size: 32px;
+            color: #00e676;
+            margin-bottom: 15px;
+        }
+
+        .support-card h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .support-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* FAQ ACCORDION SECTION */
+        .faq-category {
+            margin-bottom: 40px;
+        }
+
+        .faq-category-title {
+            color: #00e676;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 20px 25px;
+            text-align: left;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-question i {
+            color: #00e676;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 25px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 25px 20px 25px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* =========================================
+   EXACT INDEX.HTML MATCHING FOOTER CSS
+========================================= */
+.rizz-footer {
+    background: linear-gradient(180deg, #0d131f 0%, #080c14 100%);
+    color: #94a3b8;
+    padding: 80px 8% 30px;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rizz-footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+    gap: 50px;
+    padding-bottom: 60px;
+}
+
+.footer-logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.rizz-manifesto {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    max-width: 310px;
+    font-weight: 500;
+}
+
+/* Social Buttons with Green Glow Effect */
+.rizz-social-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: #00e676;
+    color: #080c14;
+    border-color: #00e676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); /* Green Glow */
+    transform: translateY(-3px);
+}
+
+/* Section Column Headers */
+.col-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800; /* Bolder to match Image 2 */
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 14px;
+    letter-spacing: -0.3px;
+}
+
+.col-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 18px;
+    background: #00e676;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.6); /* Glowing accent line */
+}
+
+/* Navigation & Policy Links with Green Glow Hover */
+.rizz-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rizz-nav-list li {
+    margin-bottom: 14px;
+}
+
+.rizz-nav-list a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.rizz-nav-list a:hover {
+    color: #00e676;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4); /* Text Glow */
+    transform: translateX(4px);
+}
+
+/* Contact Info Styling */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px rgba(0, 230, 118, 0.3));
+}
+
+.contact-item a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #00e676;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+}
+
+/* Bottom Bar Badge */
+.rizz-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.pill-badge {
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    color: #00e676;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.15);
+}
+
+@media (max-width: 992px) {
+    .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+    .rizz-footer-wrapper { grid-template-columns: 1fr; }
+    .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html#home" class="logo">
+            <img src="images/logo.png" alt="RIZZ EV Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Rizz EV</a></li>
+                <li><a href="riders.html">Rider Portal</a></li>
+                <li><a href="investors.html">Fleet Owners</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <a href="riders.html" class="btn-primary">Apply for Bike</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Support & FAQ</h1>
+            <p>Find answers to common questions about rider rentals, fleet operations, and hub services.</p>
+        </div>
+
+        <!-- QUICK CONTACT GRID -->
+        <div class="support-grid">
+            <div class="support-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Hotline</h3>
+                <p>+91 88844 46804 </p>
+            </div>
+            <div class="support-card">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Email Support</h3>
+                <p>info.rizzev@gmail.com</p>
+            </div>
+            <div class="support-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Main Hub</h3>
+                <p>Bommanahalli,
+Bangalore, Karnataka 560068</p>
+            </div>
+        </div>
+
+        <!-- FAQ ACCORDION -->
+        <div class="faq-container">
+            
+            <!-- CATEGORY 1: RIDER ONBOARDING & RENTAL -->
+            <div class="faq-category">
+                <div class="faq-category-title">
+                    <i class="fas fa-motorcycle"></i> Rider Onboarding & Rentals
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I rent an EV scooter from RIZZ EV?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        You can apply online via our Rider Portal or visit any RIZZ EV Hub. Submit your government photo ID, pay the initial onboarding fee, complete a quick verification check, and pick up your scooter on the same day.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What documents are required to get a bike?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        You need a valid government-issued ID (such as an Aadhaar Card or Voter ID) along with your current address proof and basic contact details.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is the onboarding fee refundable?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        As outlined in our Rental Agreement, the onboarding fee covers administrative registration, background checks, and initial vehicle allocation, and is non-refundable once vehicle possession is taken.
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 2: PAYMENTS & RATES -->
+            <div class="faq-category">
+                <div class="faq-category-title">
+                    <i class="fas fa-wallet"></i> Payments & Daily Fares
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do daily rental payments work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Daily rental fees are automatically collected via digital UPI/Debit channels according to your assigned schedule. You can manage and track payments directly through your RIZZ EV Rider Dashboard.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What happens if I miss a daily rent payment?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Failure to pay rental dues on time may result in remote vehicle immobilization via our IoT network. Outstanding balances must be cleared along with applicable penalty charges before vehicle access is restored.
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 3: MAINTENANCE & BATTERY SWAP -->
+            <div class="faq-category">
+                <div class="faq-category-title">
+                    <i class="fas fa-tools"></i> Maintenance & Battery Swapping
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Where can I swap or charge my bike battery?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        You can visit any designated RIZZ EV Swap Hub across the city to replace low batteries with fully charged units in under 2 minutes.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What should I do if the vehicle breaks down or suffers damage?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Immediately pull over safely and contact our 24/7 Helpline at +91 93191 16117. Do not attempt unauthorized repairs or modifications. Our field service team will assist with recovery or issue a replacement bike subject to availability.
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 4: FLEET OWNERS & INVESTORS -->
+            <div class="faq-category">
+                <div class="faq-category-title">
+                    <i class="fas fa-chart-line"></i> Fleet Investors & Asset Partners
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I attach my bikes to the RIZZ EV platform?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Fleet owners and individual investors can register on our Fleet Owners page or reach out to investor@rizzev.com. We onboard, manage rider allocations, oversee servicing, and disburse monthly returns to asset owners.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="rizz-footer">
+    <div class="rizz-footer-wrapper">
+        
+        <!-- Left Brand & Socials -->
+        <div class="rizz-f-col brand-col">
+            <a href="index.html#home">
+                <img src="images/logo.png" alt="RIZZ EV Logo" class="footer-logo-img">
+            </a>
+            <p class="rizz-manifesto">
+                Redefining urban logistics across India. Empowering daily delivery partners with smart, affordable electric fleets.
+            </p>
+            <div class="rizz-social-row">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/rapx_ev" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://wa.me/918884446804" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="rizz-f-col">
+            <h4 class="col-title">Navigation</h4>
+            <ul class="rizz-nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="riders.html">Rider Portal</a></li>
+                <li><a href="investors.html">Fleet Owners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Policies Links -->
+        <div class="rizz-f-col">
+            <h4 class="col-title">Policies</h4>
+            <ul class="rizz-nav-list">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="rental-agreement.html">Rental Agreement</a></li>
+                <li><a href="fleet-investor-policy.html">Fleet Investor Policy</a></li>
+                 <li><a href="support-faq.html">Support & FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="rizz-f-col contact-col">
+            <h4 class="col-title">Get In Touch</h4>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Bommanahalli,<br>Bangalore, Karnataka 560068</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>+91 88844 46804</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info.rizzev@gmail.com&su=Inquiry%20regarding%20RIZZ%20EV" target="_blank" rel="noopener noreferrer">info.rizzev@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rizz-footer-bottom">
+        <p>© 2026 rizz ev. All rights reserved.</p>
+        <span class="pill-badge">⚡ Zero Emission Fleet Platform</span>
+    </div>
+</footer>
+
+    <!-- ACCORDION SCRIPT -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                
+                // Toggle active class on clicked item
+                faqItem.classList.toggle('active');
+
+                // Close other items in the same section
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+    // 1. Force browser to handle manual scroll restoration so it doesn't auto-remember on refresh
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // 2. Save scroll position on scroll
+    window.addEventListener('scroll', function() {
+        if (history.replaceState) {
+            history.replaceState({ scroll: window.scrollY }, document.title);
+        }
+    }, { passive: true });
+
+    // 3. Clear state on a fresh page load/refresh so it forces the top
+    window.addEventListener('DOMContentLoaded', function() {
+        // If the user just hit refresh, clear the history state scroll memory
+        if (performance.navigation.type === 1 || window.performance?.getEntriesByType("navigation")[0]?.type === "reload") {
+            window.scrollTo(0, 0);
+            if (history.replaceState) {
+                history.replaceState({ scroll: 0 }, document.title);
+            }
+        }
+    });
+
+    // 4. Restore exact position ONLY when using the Back button
+    window.addEventListener('pageshow', function(event) {
+        const isReload = performance.navigation.type === 1;
+        if (!isReload && history.state && history.state.scroll !== undefined) {
+            window.scrollTo(0, history.state.scroll);
+        }
+    });
+</script>
+
+</body>
+</html>

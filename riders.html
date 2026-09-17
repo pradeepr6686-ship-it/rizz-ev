@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rider Portal | RIZZ EV - Earn More Every Kilometer</title>
+    <!-- FontAwesome Icons for Footer & UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts import to match index.html typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           RESET & CORE PAGE STYLES
+        ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #080c14;
+            color: #cbd5e1;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           FLOATING MODERN NAVBAR (MATCHES INDEX)
+        ========================================= */
+        .navbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1300px;
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 35px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.03);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #10b981;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            color: #047857;
+            transform: translateY(-1px);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: #00c853;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #00a843;
+            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           FULL-WIDTH HERO BACKGROUND VIDEO (MATCHES INVESTOR)
+        ========================================= */
+        .hero-video-layout {
+            position: relative;
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 8% 80px;
+            overflow: hidden;
+            background: #0f172a;
+            margin-bottom: 70px;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg, 
+                rgba(8, 12, 20, 0.65) 0%, 
+                rgba(8, 12, 20, 0.50) 50%, 
+                rgba(8, 12, 20, 0.85) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content-video {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content-video h1 {
+            color: #ffffff !important;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .hero-content-video h1 span {
+            color: #00e676;
+        }
+
+        .hero-content-video p {
+            color: #cbd5e1 !important;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pill-badge-head {
+            display: inline-block;
+            background: rgba(0, 230, 118, 0.1);
+            color: #00e676;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           MAIN CONTAINER & PAGE SECTIONS
+        ========================================= */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 6% 80px;
+        }
+
+        .bg-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+        }
+
+        /* SECTION HEADER */
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        /* BENEFIT GRID */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 90px;
+        }
+
+        .benefit-card {
+            padding: 35px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #00e676;
+        }
+
+        .benefit-card h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .benefit-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* INTERACTIVE CALCULATOR SECTION */
+        .calculator-wrapper {
+            padding: 50px;
+            margin-bottom: 100px;
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.05) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(0, 230, 118, 0.25);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .calc-controls h3 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .slider-box {
+            margin: 30px 0;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .km-value {
+            color: #00e676;
+            font-size: 22px;
+        }
+
+        input[type=range] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #1e293b;
+            outline: none;
+            accent-color: #00e676;
+        }
+
+        .calc-results {
+            background: #080c14;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .res-box {
+            margin-bottom: 25px;
+        }
+
+        .res-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .res-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .res-amount {
+            font-size: 38px;
+            font-weight: 900;
+            color: #00e676;
+        }
+
+        .res-amount.petrol {
+            color: #ef4444;
+            font-size: 24px;
+            text-decoration: line-through;
+        }
+
+        /* COMPARISON TABLE */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 100px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 20px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th {
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .comparison-table td {
+            font-size: 14px;
+        }
+
+        .comparison-table .highlight-col {
+            background: rgba(0, 230, 118, 0.04);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* STEP BY STEP PROCESS */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 100px;
+        }
+
+        .process-card {
+            padding: 30px;
+            position: relative;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background: #00e676;
+            color: #080c14;
+            font-weight: 900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .process-card h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .testimonial-card {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .rider-review {
+            font-size: 14px;
+            color: #cbd5e1;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .rider-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .rider-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00e676;
+            font-weight: 800;
+        }
+
+        .rider-info h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .rider-info p {
+            color: #00e676;
+            font-size: 12px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* CTA BANNER */
+        .cta-card {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1) 0%, rgba(8, 12, 20, 0.95) 100%);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+
+        .cta-card h2 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .btn-green-cta {
+            background: #00e676;
+            color: #080c14;
+            padding: 14px 34px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-green-cta:hover {
+            background: #00c853;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           RIZZ EV CUSTOM FOOTER STYLES
+        ========================================= */
+        .rizz-footer {
+            background: linear-gradient(180deg, #0d131f 0%, #080c14 100%);
+            color: #94a3b8;
+            padding: 80px 8% 30px;
+            font-family: system-ui, -apple-system, sans-serif;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .rizz-footer-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+            gap: 50px;
+            padding-bottom: 60px;
+        }
+
+        .rizz-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .rizz-manifesto {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            max-width: 310px;
+        }
+
+        .rizz-social-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #00e676;
+            color: #080c14;
+            transform: translateY(-3px);
+        }
+
+        .col-title {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .col-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 16px;
+            background: #00e676;
+            border-radius: 2px;
+        }
+
+        .rizz-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rizz-nav-list li {
+            margin-bottom: 12px;
+        }
+
+        .rizz-nav-list a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .rizz-nav-list a:hover {
+            color: #00e676;
+            transform: translateX(5px);
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
+
+        .contact-item a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: #00e676;
+        }
+
+        .rizz-footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .pill-badge {
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.25);
+            color: #00e676;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .footer-logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 992px) {
+            .hero-video-layout { min-height: 70vh; padding-top: 120px; }
+            .hero-content-video h1 { font-size: 36px; }
+            .benefits-grid, .calc-grid, .process-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar nav { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .rizz-footer-wrapper { grid-template-columns: 1fr; }
+            .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR (MATCHES INDEX.HTML) -->
+    <header class="navbar">
+        <a href="index.html#home" class="logo">
+            <img src="images/logo.png" alt="RIZZ EV Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="riders.html">Rider Portal</a></li>
+                <li><a href="investors.html">Fleet Owners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- FULL-WIDTH HERO SECTION WITH BACKGROUND VIDEO -->
+    <section class="hero-video-layout">
+        <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="videos/riders.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-video-overlay"></div>
+
+        <div class="hero-content-video">
+            <span class="pill-badge-head">🛵 RIDER EMPOWERMENT PLATFORM</span>
+            <h1>Stop Paying for Petrol. <br><span>Take Home ₹7,500+ Extra Every Month.</span></h1>
+            <p>Get a high-performance commercial EV scooter on flexible daily rentals. Zero fuel costs, free battery swaps, and zero maintenance headaches.</p>
+            <div class="hero-actions">
+                <a href="#onboarding" class="btn-green-cta">Get Your Bike Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="container">
+
+        <!-- HOW WE HELP RIDERS -->
+        <div class="section-header">
+            <span class="pill-badge-head">WHY SWITCH TO RIZZ EV</span>
+            <h2>Designed to Boost Your Daily Net Profit</h2>
+            <p>We solve the heavy expenses delivery riders face on petrol bikes.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card bg-card">
+                <div class="benefit-icon"><i class="fas fa-gas-pump-slash"></i></div>
+                <h3>100% Zero Fuel Bills</h3>
+                <p>Say goodbye to petrol station queues and rising fuel costs. Save up to ₹250–₹350 every single day instantly.</p>
+            </div>
+
+            <div class="benefit-card bg-card">
+                <div class="benefit-icon"><i class="fas fa-wrench"></i></div>
+                <h3>Zero Maintenance Expense</h3>
+                <p>We take care of service, tire wear, oil changes, and repairs. If your bike has an issue, get a instant swap at our hub.</p>
+            </div>
+
+            <div class="benefit-card bg-card">
+                <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
+                <h3>3-Minute Battery Swapping</h3>
+                <p>Never wait hours for charging. Swap depleted batteries for fully charged ones in under 3 minutes at RIZZ EV stations.</p>
+            </div>
+        </div>
+
+        <!-- CALCULATED SAVINGS CALCULATOR -->
+        <section class="calculator-wrapper bg-card">
+            <div class="calc-grid">
+                <div class="calc-controls">
+                    <span class="pill-badge-head">SAVINGS CALCULATOR</span>
+                    <h3>Calculate Your Monthly Extra Earnings</h3>
+                    <p style="color: #94a3b8;">Adjust the slider based on how many kilometers you ride daily for delivery apps (Zomato, Swiggy, Zepto, Blinkit, Shadowfax, etc.).</p>
+
+                    <div class="slider-box">
+                        <div class="slider-label">
+                            <span>Daily Distance:</span>
+                            <span class="km-value"><span id="kmText">80</span> KM / Day</span>
+                        </div>
+                        <input type="range" id="kmSlider" min="40" max="180" value="80" step="10">
+                    </div>
+                </div>
+
+                <div class="calc-results">
+                    <div class="res-box">
+                        <div class="res-title">Monthly Petrol Spending (Lost Money)</div>
+                        <div class="res-amount petrol" id="petrolCost">₹6,000</div>
+                    </div>
+                    <div class="res-box">
+                        <div class="res-title">Monthly RIZZ EV Energy Cost</div>
+                        <div class="res-amount" style="color: #cbd5e1; font-size: 24px;" id="evCost">₹960</div>
+                    </div>
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+                    <div class="res-box">
+                        <div class="res-title">Your Estimated Monthly Extra Savings</div>
+                        <div class="res-amount" id="netSavings">₹5,040</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COST BREAKDOWN COMPARISON TABLE -->
+        <div class="section-header">
+            <span class="pill-badge-head">REAL NUMBERS</span>
+            <h2>Petrol Bike vs. RIZZ EV Scooter</h2>
+            <p>Based on a daily ride average of 100 Kilometers over 30 Days.</p>
+        </div>
+
+        <div class="table-wrapper bg-card">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Expense Head</th>
+                        <th>Standard Petrol Bike</th>
+                        <th class="highlight-col">RIZZ EV Fleet Scooter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Daily Fuel / Energy Cost</strong></td>
+                        <td>₹280 / day (Petrol @ ₹100/L)</td>
+                        <td class="highlight-col"><strong>₹40 / day (Battery Swap)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monthly Maintenance & Engine Oil</strong></td>
+                        <td>₹1,500 – ₹2,500 / month</td>
+                        <td class="highlight-col"><strong>₹0 (100% Covered by Us)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Breakdown Downtime Risk</strong></td>
+                        <td>1 to 3 days lost work time</td>
+                        <td class="highlight-col"><strong>Instant Hub Swap within 1 hour</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monthly Savings Potential</strong></td>
+                        <td>Baseline Profit</td>
+                        <td class="highlight-col"><strong>₹7,200+ Additional Net Take-Home</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PROCESS OF TAKING THE BIKE -->
+        <div class="section-header" id="onboarding">
+            <span class="pill-badge-head">EASY ONBOARDING</span>
+            <h2>How to Get Your RIZZ EV Scooter in 4 Steps</h2>
+            <p>Simple 15-minute verification process with minimum documentation.</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-card bg-card">
+                <div class="step-num">1</div>
+                <h3>Apply Online</h3>
+                <p>Submit your basic details via our website or visit your nearest RIZZ EV Hub.</p>
+            </div>
+
+            <div class="process-card bg-card">
+                <div class="step-num">2</div>
+                <h3>KYC Check</h3>
+                <p>Provide valid government ID proof and Delivery App Profile details.</p>
+            </div>
+
+            <div class="process-card bg-card">
+                <div class="step-num">3</div>
+                <h3>Onboarding Deposit</h3>
+                <p>Pay a low refundable onboarding fee and choose your flexible daily/weekly plan.</p>
+            </div>
+
+            <div class="process-card bg-card">
+                <div class="step-num">4</div>
+                <h3>Drive & Earn</h3>
+                <p>Pick up your fully charged EV scooter and start earning higher profits immediately!</p>
+            </div>
+        </div>
+
+        <!-- RIDERS TESTIMONIALS -->
+<div class="section-header">
+    <span class="pill-badge-head">RIDER STORIES</span>
+    <h2>Trusted by Delivery Partners Across the City</h2>
+    <p>Real feedback from riders delivering with Zomato, Swiggy, Blinkit, and Shadowfax.</p>
+</div>
+
+<div class="testimonials-grid">
+    <div class="testimonial-card bg-card">
+        <p class="rider-review">"I used to spend ₹300 daily on petrol. Switching to RIZZ EV saved me over ₹7,000 last month. Now I send more money back home to my family."</p>
+        <div class="rider-profile">
+            <!-- Rider Photo 1 -->
+            <img src="images/riders/vishal.jpeg" alt="Ramesh Kumar" class="rider-avatar" onerror="this.src='https://via.placeholder.com/150/1e293b/00e676?text=Rider';">
+            <div class="rider-info">
+                <h4>Vishal Kumar</h4>
+                <p>Zomato Rider • Bangalore</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-card bg-card">
+        <p class="rider-review">"The battery swapping is super fast. It takes less than 3 minutes, so I don't lose order peak bonuses. Plus, zero maintenance worries!"</p>
+        <div class="rider-profile">
+            <!-- Rider Photo 2 -->
+            <img src="images/riders/nabin.jpeg" alt="Mohd. Sahil" class="rider-avatar" onerror="this.src='https://via.placeholder.com/150/1e293b/00e676?text=Rider';">
+            <div class="rider-info">
+                <h4>Nabin Kumar</h4>
+                <p>Swiggy Delivery Partner</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-card bg-card">
+        <p class="rider-review">"My old petrol bike had engine issues every month. With RIZZ EV, if there is any issue, they replace the bike immediately at the hub."</p>
+        <div class="rider-profile">
+            <!-- Rider Photo 3 -->
+            <img src="images/riders/jeetendra.jpeg" alt="Amit Singh" class="rider-avatar" onerror="this.src='https://via.placeholder.com/150/1e293b/00e676?text=Rider';">
+            <div class="rider-info">
+                <h4>Jeetendra Kumar</h4>
+                <p>Zomato Fleet Rider</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- CTA BANNER -->
+        <section class="cta-card">
+            <h2>Ready to Increase Your Daily Earnings?</h2>
+            <p>Get onboarded with RIZZ EV today and drive away with zero fuel costs.</p>
+            <a href="contact.html" class="btn-green-cta">Get Your EV Bike Now</a>
+        </section>
+
+    </div>
+
+    <!-- RIZZ EV FOOTER SECTION (MATCHES INDEX.HTML) -->
+    <footer class="rizz-footer">
+        <div class="rizz-footer-wrapper">
+            
+            <!-- Column 1: Identity & Motto -->
+            <div class="rizz-f-col brand-col">
+                <a href="index.html#home" class="rizz-brand">
+                    <img src="images/logo.png" alt="rizz ev Logo" class="footer-logo-img">
+                </a>
+                <p class="rizz-manifesto">
+                    Redefining urban logistics across India. Empowering daily delivery partners with smart, affordable electric fleets.
+                </p>
+                <div class="rizz-social-row">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/yourpage" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/yourhandle" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://wa.me/919319116117" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Platform Links -->
+            <div class="rizz-f-col">
+                <h4 class="col-title">Navigation</h4>
+                <ul class="rizz-nav-list">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="riders.html">Rider Portal</a></li>
+                    <li><a href="investors.html">Fleet Owners</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Governance & Policies -->
+            <div class="rizz-f-col">
+                <h4 class="col-title">Policies</h4>
+                <ul class="rizz-nav-list">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="rental-agreement.html">Rental Agreement</a></li>
+                    <li><a href="fleet-investor-policy.html">Fleet Investor Policy</a></li>
+                    <li><a href="support-faq.html">Support & FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Location & Direct Contact -->
+            <div class="rizz-f-col contact-col">
+                <h4 class="col-title">Get In Touch</h4>
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Bommanahalli,<br>Bangalore, Karnataka 560068</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+91 88844 46804</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="mailto:info.rizzev@gmail.com">info.rizzev@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="rizz-footer-bottom">
+            <p>© 2026 rizz ev. All rights reserved.</p>
+            <span class="pill-badge">⚡ Zero Emission Fleet Platform</span>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CALCULATOR JAVASCRIPT -->
+    <script>
+        const slider = document.getElementById('kmSlider');
+        const kmText = document.getElementById('kmText');
+        const petrolCost = document.getElementById('petrolCost');
+        const evCost = document.getElementById('evCost');
+        const netSavings = document.getElementById('netSavings');
+
+        function updateSavings() {
+            const km = parseInt(slider.value);
+            kmText.innerText = km;
+
+            // Calculations based on 30 days month
+            // Petrol: Avg 40 km/L @ Rs 100/L = Rs 2.50 per km
+            const monthlyPetrol = km * 2.50 * 30;
+            
+            // EV: Avg Rs 0.40 per km energy/swap cost
+            const monthlyEv = km * 0.40 * 30;
+            
+            const savings = monthlyPetrol - monthlyEv;
+
+            petrolCost.innerText = '₹' + Math.round(monthlyPetrol).toLocaleString('en-IN');
+            evCost.innerText = '₹' + Math.round(monthlyEv).toLocaleString('en-IN');
+            netSavings.innerText = '₹' + Math.round(savings).toLocaleString('en-IN');
+        }
+
+        slider.addEventListener('input', updateSavings);
+        updateSavings(); // Initialize on page load
+    </script>
+
+<script>
+    // 1. Force browser to handle manual scroll restoration so it doesn't auto-remember on refresh
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // 2. Save scroll position on scroll
+    window.addEventListener('scroll', function() {
+        if (history.replaceState) {
+            history.replaceState({ scroll: window.scrollY }, document.title);
+        }
+    }, { passive: true });
+
+    // 3. Clear state on a fresh page load/refresh so it forces the top
+    window.addEventListener('DOMContentLoaded', function() {
+        // If the user just hit refresh, clear the history state scroll memory
+        if (performance.navigation.type === 1 || window.performance?.getEntriesByType("navigation")[0]?.type === "reload") {
+            window.scrollTo(0, 0);
+            if (history.replaceState) {
+                history.replaceState({ scroll: 0 }, document.title);
+            }
+        }
+    });
+
+    // 4. Restore exact position ONLY when using the Back button
+    window.addEventListener('pageshow', function(event) {
+        const isReload = performance.navigation.type === 1;
+        if (!isReload && history.state && history.state.scroll !== undefined) {
+            window.scrollTo(0, history.state.scroll);
+        }
+    });
+</script>
+
+</body>
+</html>

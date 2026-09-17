@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Owners & Investors | RIZZ EV - High Yield Green Logistics</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts import to match index.html typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   <style>
+        /* =========================================
+           RESET & CORE PAGE STYLES
+        ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #080c14;
+            color: #cbd5e1;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           FLOATING MODERN NAVBAR
+        ========================================= */
+        .navbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1300px;
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 35px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.03);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #10b981;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            color: #047857;
+            transform: translateY(-1px);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: #00c853;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #00a843;
+            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           FULL-WIDTH HERO BACKGROUND VIDEO / SECTION
+        ========================================= */
+        .hero-video-layout {
+            position: relative;
+            width: 100%;
+            min-height: 100vh; /* Changed from 85vh to 100vh to fill full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 8% 60px;
+            overflow: hidden;
+            background: #0f172a;
+            margin-bottom: 70px;
+            box-sizing: border-box;
+        }
+
+        .hero-bg-video,
+        .hero-video-layout video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover; /* Forces video to expand and cover entire container without gaps */
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg, 
+                rgba(8, 12, 20, 0.65) 0%, 
+                rgba(8, 12, 20, 0.50) 50%, 
+                rgba(8, 12, 20, 0.85) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content-video {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content-video h1 {
+            color: #ffffff !important;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .hero-content-video h1 span {
+            color: #00e676;
+        }
+
+        .hero-content-video p {
+            color: #cbd5e1 !important;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pill-badge-head {
+            display: inline-block;
+            background: rgba(0, 230, 118, 0.1);
+            color: #00e676;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           MAIN CONTAINER & PAGE SECTIONS
+        ========================================= */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 6% 80px;
+        }
+
+        .bg-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        /* METRICS HIGHLIGHT GRID */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 90px;
+        }
+
+        .metric-card {
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+        }
+
+        .metric-num {
+            font-size: 38px;
+            font-weight: 900;
+            color: #00e676;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* VALUE PROP GRID */
+        .investor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 100px;
+        }
+
+        .investor-card {
+            padding: 35px;
+            transition: transform 0.3s ease;
+        }
+
+        .investor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .investor-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #00e676;
+        }
+
+        .investor-card h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .investor-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* STEP-BY-STEP ROADMAP */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 100px;
+        }
+
+        .roadmap-step {
+            padding: 30px 25px;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 14px;
+            font-weight: 800;
+            color: #00e676;
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .roadmap-step h3 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-step p {
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ASSET SECURITY & IOT */
+        .security-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            padding: 50px;
+            margin-bottom: 100px;
+        }
+
+        .security-content h3 {
+            font-size: 30px;
+            color: #ffffff;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .security-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .security-list li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .security-list li i {
+            color: #00e676;
+            font-size: 20px;
+            margin-top: 3px;
+        }
+
+        .security-box-right {
+            background: rgba(0, 230, 118, 0.04);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .security-box-right i {
+            font-size: 54px;
+            color: #00e676;
+            margin-bottom: 20px;
+        }
+
+        .security-box-right h4 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .security-box-right p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+
+        
+
+        /* ROI CALCULATOR */
+        .calculator-wrapper {
+            padding: 50px;
+            margin-bottom: 100px;
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.05) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(0, 230, 118, 0.25);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .calc-controls h3 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .slider-box {
+            margin: 30px 0;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .bike-value {
+            color: #00e676;
+            font-size: 22px;
+        }
+
+        input[type=range] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #1e293b;
+            outline: none;
+            accent-color: #00e676;
+        }
+
+        .calc-results {
+            background: #080c14;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .res-box {
+            margin-bottom: 25px;
+        }
+
+        .res-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .res-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .res-amount {
+            font-size: 38px;
+            font-weight: 900;
+            color: #00e676;
+        }
+
+        /* DEMAND LOGISTICS ECOSYSTEM */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 100px;
+        }
+
+        .eco-card {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .eco-card i {
+            font-size: 32px;
+            color: #00e676;
+            margin-bottom: 15px;
+        }
+
+        .eco-card h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .eco-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* PARTNERSHIP MODELS */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .plan-card {
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .plan-card.featured {
+            border: 1px solid #00e676;
+            background: linear-gradient(180deg, rgba(0, 230, 118, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            right: 30px;
+            background: #00e676;
+            color: #080c14;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .plan-card h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .plan-price {
+            font-size: 32px;
+            font-weight: 900;
+            color: #00e676;
+            margin-bottom: 20px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .plan-features li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5e1;
+        }
+
+        .plan-features li i {
+            color: #00e676;
+        }
+
+
+        /* =========================================
+   UNIT ECONOMICS & REVENUE SPLIT CARD
+========================================= */
+.unit-economics-wrapper {
+    padding: 45px;
+    border: 1px solid rgba(0, 230, 118, 0.25);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(8, 12, 20, 0.95) 100%);
+}
+
+.unit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.unit-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.unit-box-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.unit-box-header i {
+    font-size: 28px;
+    color: #00e676;
+    background: rgba(0, 230, 118, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.unit-box-header h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.unit-box-header p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.unit-line-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #cbd5e1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.unit-line-item.highlight {
+    border-bottom: none;
+    padding-top: 18px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.unit-divider {
+    height: 1px;
+    background: rgba(0, 230, 118, 0.3);
+    margin: 10px 0;
+}
+
+.text-white { color: #ffffff; }
+.text-red { color: #ef4444; }
+.text-green { color: #00e676; font-size: 22px; }
+
+.unit-box-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.eco-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.eco-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.25);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00e676;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.eco-feature h4 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.eco-feature p {
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .unit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+        /* =========================================
+   FEATURED INVESTOR DECK DOWNLOAD CARD
+========================================= */
+.deck-download-card {
+    padding: 45px;
+    margin-bottom: 100px;
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    background: linear-gradient(135deg, rgba(0, 230, 118, 0.05) 0%, rgba(15, 23, 42, 0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.deck-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.deck-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 230, 118, 0.15);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #00e676;
+    flex-shrink: 0;
+}
+
+.deck-info h3 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.deck-info p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.deck-highlights ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.deck-highlights ul li {
+    color: #cbd5e1;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.deck-highlights ul li i {
+    color: #00e676;
+}
+
+.deck-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .deck-highlights ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+        /* INVESTOR FAQ ACCORDION */
+        .faq-wrapper {
+            margin-bottom: 100px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 20px 25px;
+            text-align: left;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question i {
+            color: #00e676;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 25px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 25px 20px 25px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* CTA BANNER */
+        .cta-card {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1) 0%, rgba(8, 12, 20, 0.95) 100%);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+
+        .cta-card h2 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .btn-green-cta {
+            background: #00e676;
+            color: #080c14;
+            padding: 14px 34px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-green-cta:hover {
+            background: #00c853;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+   EXACT INDEX.HTML MATCHING FOOTER CSS
+========================================= */
+.rizz-footer {
+    background: linear-gradient(180deg, #0d131f 0%, #080c14 100%);
+    color: #94a3b8;
+    padding: 80px 8% 30px;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rizz-footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+    gap: 50px;
+    padding-bottom: 60px;
+}
+
+.footer-logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.rizz-manifesto {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    max-width: 310px;
+    font-weight: 500;
+}
+
+/* Social Buttons with Green Glow Effect */
+.rizz-social-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: #00e676;
+    color: #080c14;
+    border-color: #00e676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); /* Green Glow */
+    transform: translateY(-3px);
+}
+
+/* Section Column Headers */
+.col-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800; /* Bolder to match Image 2 */
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 14px;
+    letter-spacing: -0.3px;
+}
+
+.col-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 18px;
+    background: #00e676;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.6); /* Glowing accent line */
+}
+
+/* Navigation & Policy Links with Green Glow Hover */
+.rizz-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rizz-nav-list li {
+    margin-bottom: 14px;
+}
+
+.rizz-nav-list a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.rizz-nav-list a:hover {
+    color: #00e676;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4); /* Text Glow */
+    transform: translateX(4px);
+}
+
+/* Contact Info Styling */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px rgba(0, 230, 118, 0.3));
+}
+
+.contact-item a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #00e676;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+}
+
+/* Bottom Bar Badge */
+.rizz-footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.pill-badge {
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    color: #00e676;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.15);
+}
+
+@media (max-width: 992px) {
+    .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+    .rizz-footer-wrapper { grid-template-columns: 1fr; }
+    .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
+    </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html#home" class="logo">
+            <img src="images/logo.png" alt="RIZZ EV Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="riders.html">Rider Portal</a></li>
+                <li><a href="investors.html">Fleet Owners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-right">
+            <a href="contact.html" class="btn-primary">Become Partner</a>
+        </div>
+    </header>
+
+    <!-- FULL-WIDTH HERO SECTION WITH BACKGROUND VIDEO -->
+    <section class="hero-video-layout">
+        <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="videos/fleet.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-video-overlay"></div>
+
+        <div class="hero-content-video">
+            <span class="pill-badge-head">💼 FLEET INVESTMENT PORTAL</span>
+            <h1>Own EV Fleets. Earn <span>51%+ Annualized Cash Yields.</span></h1>
+            <p>Deploy high-utilization commercial electric scooters into India's booming hyper-local delivery ecosystem with 100% managed ops and IoT tracking.</p>
+            <div class="hero-actions">
+                <a href="#roi-calculator" class="btn-green-cta">Calculate Returns</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PAGE CONTAINER -->
+    <div class="container">
+        
+        <!-- METRICS ROW -->
+        <div class="metrics-grid">
+            <div class="metric-card bg-card">
+                <div class="metric-num">95%+</div>
+                <div class="metric-label">Fleet Utilization</div>
+            </div>
+            <div class="metric-card bg-card">
+                <div class="metric-num">₹3,200+</div>
+                <div class="metric-label">Avg Rental / Bike / Mo</div>
+            </div>
+            <div class="metric-card bg-card">
+                <div class="metric-num">100%</div>
+                <div class="metric-label">IoT Telematics Tracked</div>
+            </div>
+            <div class="metric-card bg-card">
+                <div class="metric-num">24-30%</div>
+                <div class="metric-label">Projected IRR</div>
+            </div>
+        </div>
+
+        <!-- VALUE PROPOSITION -->
+        <div class="section-header">
+            <span class="pill-badge-head">MANAGED ASSET MODEL</span>
+            <h2>Why Invest in RIZZ EV Fleets?</h2>
+            <p>We handle rider onboarding, daily collections, battery swaps, and vehicle servicing while you earn monthly payouts.</p>
+        </div>
+
+        <div class="investor-grid">
+            <div class="investor-card bg-card">
+                <div class="investor-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Consistent Monthly Cashflow</h3>
+                <p>Guaranteed rider demand from major delivery partners (Blinkit, Zomato, Swiggy) ensures predictable recurring revenue.</p>
+            </div>
+
+            <div class="investor-card bg-card">
+                <div class="investor-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Full Asset Security</h3>
+                <p>Every scooter is outfitted with smart GPS, remote engine kill-switches, and automated geofencing technology.</p>
+            </div>
+
+            <div class="investor-card bg-card">
+                <div class="investor-icon"><i class="fas fa-tools"></i></div>
+                <h3>End-to-End Operations</h3>
+                <p>Zero operational hassle for you. Our dedicated hub technicians handle maintenance, battery health, and repairs.</p>
+            </div>
+        </div>
+
+        <!-- NEW SECTION 1: INVESTOR ROADMAP -->
+        <div class="section-header">
+            <span class="pill-badge-head">SIMPLE ONBOARDING</span>
+            <h2>4 Steps to Start Earning</h2>
+            <p>A transparent, streamlined process to deploy your vehicles and receive monthly payouts.</p>
+        </div>
+
+        <div class="roadmap-grid">
+            <div class="roadmap-step bg-card">
+                <div class="step-number">01</div>
+                <h3>Agreement & Purchase</h3>
+                <p>Select your fleet size and complete legal ownership agreements for your commercial EV assets.</p>
+            </div>
+            <div class="roadmap-step bg-card">
+                <div class="step-number">02</div>
+                <h3>IoT Onboarding</h3>
+                <p>Vehicles are equipped with RIZZ EV telematics, GPS immobilizers, and assigned to a regional hub.</p>
+            </div>
+            <div class="roadmap-step bg-card">
+                <div class="step-number">03</div>
+                <h3>Rider Allocation</h3>
+                <p>We assign verified, KYC-checked delivery riders actively earning on top delivery platforms.</p>
+            </div>
+            <div class="roadmap-step bg-card">
+                <div class="step-number">04</div>
+                <h3>Monthly Payouts</h3>
+                <p>Receive recurring yield settlements directly into your bank account during the first week of every month.</p>
+            </div>
+        </div>
+
+        <!-- NEW SECTION 2: ASSET PROTECTION & TELEMATICS -->
+        <div class="security-wrapper bg-card">
+            <div class="security-content">
+                <span class="pill-badge-head">24/7 ASSET SECURITY</span>
+                <h3>Advanced Telematics & Anti-Theft Protection</h3>
+                <p style="color: #94a3b8;">Your capital investment is guarded around the clock by proprietary smart IoT hardware integrated into every scooter frame.</p>
+                
+                <ul class="security-list">
+                    <li>
+                        <i class="fas fa-satellite-dish"></i>
+                        <div><strong>Live GPS Geofencing:</strong> Automated alerts trigger if a vehicle moves outside approved operational delivery zones.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-power-off"></i>
+                        <div><strong>Remote Engine Kill-Switch:</strong> Instant vehicle immobilization in case of unapproved usage or payment defaults.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-car-crash"></i>
+                        <div><strong>Collision & Tamper Sensors:</strong> Real-time impact detection and battery compartment tamper notifications.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="security-box-right">
+                <i class="fas fa-shield-virus"></i>
+                <h4>Zero Capital Exposure</h4>
+                <p>Comprehensive insurance coverage combined with rider security deposits protects against unexpected damage costs.</p>
+            </div>
+        </div>
+
+
+        <!-- ROI CALCULATOR -->
+        <section class="calculator-wrapper bg-card" id="roi-calculator">
+            <div class="calc-grid">
+                <div class="calc-controls">
+                    <span class="pill-badge-head">INVESTOR ROI CALCULATOR</span>
+                    <h3>Estimate Your Annual Returns</h3>
+                    <p style="color: #94a3b8;">Select how many EV scooters you wish to deploy into the RIZZ EV network.</p>
+
+                    <div class="slider-box">
+                        <div class="slider-label">
+                            <span>Fleet Size:</span>
+                            <span class="bike-value"><span id="bikeText">5</span> EV Scooters</span>
+                        </div>
+                        <input type="range" id="bikeSlider" min="5" max="100" value="5" step="1">
+                    </div>
+                </div>
+
+                <div class="calc-results">
+                    <div class="res-box">
+                        <div class="res-title">Estimated Asset Investment</div>
+                        <div class="res-amount" style="color: #cbd5e1; font-size: 26px;" id="totalInvest">₹4,25,000</div>
+                    </div>
+                    <div class="res-box">
+                        <div class="res-title">Estimated Monthly Net Revenue</div>
+                        <div class="res-amount" id="monthlyPayout">₹16,000</div>
+                    </div>
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+                    <div class="res-box">
+                        <div class="res-title">Estimated Annual Net Revenue (IRR ~26%)</div>
+                        <div class="res-amount" id="annualPayout">₹1,92,000</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION 3: DEMAND & PLATFORM ECOSYSTEM -->
+        <div class="section-header">
+            <span class="pill-badge-head">HIGH DEMAND ECOSYSTEM</span>
+            <h2>Driven by Gig-Economy Logistics</h2>
+            <p>High vehicle utilization is guaranteed by the rapid expansion of quick-commerce delivery networks across Indian metropolitan hubs.</p>
+        </div>
+
+        <div class="ecosystem-grid">
+            <div class="eco-card bg-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Quick Commerce Demand</h3>
+                <p>10-minute grocery apps require continuous 2-wheeler fleets near dark stores, driving daily rentals.</p>
+            </div>
+            <div class="eco-card bg-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Food & Parcel Delivery</h3>
+                <p>Round-the-clock shift delivery riders rely on our low-cost daily rental scooters to maximize daily take-home earnings.</p>
+            </div>
+            <div class="eco-card bg-card">
+                <i class="fas fa-sync"></i>
+                <h3>Rapid Battery Swapping</h3>
+                <p>Through our partnership with a network of battery swap stations, we eliminate charging downtime, enabling seamless multi-shift vehicle utilization.</p>
+            </div>
+        </div>
+
+      <!-- REVENUE SPLIT & UNIT ECONOMICS SECTION -->
+<div class="section-header" style="margin-top: 40px;">
+    <span class="pill-badge-head">TRANSPARENT UNIT ECONOMICS</span>
+    <h2>How Daily Bike Revenue is Shared</h2>
+    <p>A transparent breakdown of monthly earnings, hub operational expenses, and net investor yields per vehicle.</p>
+</div>
+
+<div class="unit-economics-wrapper bg-card" style="margin-bottom: 90px; clear: both;">
+    <div class="unit-grid">
+        <!-- LEFT: PER-BIKE MONTHLY BREAKDOWN -->
+       <div class="unit-box">
+    <div class="unit-box-header">
+        <i class="fas fa-motorcycle"></i>
+        <div>
+            <h3>Per-Vehicle Unit Economics</h3>
+            <p>Average monthly performance metrics (@ ₹285/day rider rate)</p>
+        </div>
+    </div>
+
+    <div class="unit-line-item">
+        <span>Gross Monthly Collection (excl. 18% GST)</span>
+        <strong class="text-white">₹7,250</strong>
+    </div>
+    <div class="unit-line-item">
+        <span>Battery Swapping Expense </span>
+        <strong class="text-red">- ₹2,520</strong>
+    </div>
+    <div class="unit-line-item">
+        <span>RIZZ EV Hub Ops, Tech &amp; Servicing Pool</span>
+        <strong class="text-red">- ₹1,530</strong>
+    </div>
+    
+    <div class="unit-divider"></div>
+
+    <div class="unit-line-item highlight">
+        <span>Net Monthly Investor Payout</span>
+        <strong class="text-green">₹3,200 / Month</strong>
+    </div>
+</div>
+
+        <!-- RIGHT: KEY FINANCIAL HIGHLIGHTS -->
+        <div class="unit-box-highlights">
+            <div class="eco-feature">
+                <div class="eco-icon"><i class="fas fa-calendar-check"></i></div>
+                <div>
+                    <h4>Fixed Monthly Disbursement</h4>
+                    <p>Payouts are transferred directly to your bank account within the first 7 business days of every month.</p>
+                </div>
+            </div>
+
+            <div class="eco-feature">
+                <div class="eco-icon"><i class="fas fa-receipt"></i></div>
+                <div>
+                    <h4>Itemized Monthly Statements</h4>
+                    <p>Track rider uptime, total kilometers driven, and battery swap logs directly from your investor portal.</p>
+                </div>
+            </div>
+
+            <div class="eco-feature">
+                <div class="eco-icon"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                    <h4>100% Asset Ownership</h4>
+                    <p>Vehicles remain registered directly under your name or corporate entity with clean titling.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURED INVESTOR DECK DOWNLOAD SECTION -->
+<div class="section-header" style="margin-top: 40px;">
+    <span class="pill-badge-head">OFFICIAL DOCUMENTATION</span>
+    <h2>Download the Full Pitch Deck</h2>
+    <p>Get comprehensive insights into RIZZ EV’s unit economics, asset security protocols, expansion roadmap, and financial projections.</p>
+</div>
+
+<div class="deck-download-card bg-card" style="margin-bottom: 100px;">
+    <div class="deck-info">
+        <div class="deck-icon">
+            <i class="fas fa-file-pdf"></i>
+        </div>
+        <div>
+            <h3>RIZZ EV - Fleet Investor Deck (2026 Edition)</h3>
+            <p>PDF Document • Complete Asset Ownership & Yield Overview</p>
+        </div>
+    </div>
+
+    <div class="deck-highlights">
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Detailed Unit Economics & Daily Rental Splits</li>
+            <li><i class="fas fa-check-circle"></i> Smart IoT Telematics & Remote Immobilization Specs</li>
+            <li><i class="fas fa-check-circle"></i> Hub Maintenance SLA & Insurance Coverage Breakdown</li>
+            <li><i class="fas fa-check-circle"></i> 3-Year Scale-up & Regional Expansion Roadmap</li>
+        </ul>
+    </div>
+
+    <div class="deck-action">
+        <a href="assets/RIZZ_EV_Investor_Deck.pdf" download="RIZZ_EV_Investor_Deck.pdf" class="btn-green-cta">
+            <i class="fas fa-file-download"></i> Download PDF Deck
+        </a>
+    </div>
+</div>
+
+        <!-- NEW SECTION 4: INVESTOR FAQ ACCORDION -->
+        <div class="section-header">
+            <span class="pill-badge-head">GOT QUESTIONS?</span>
+            <h2>Investor Frequently Asked Questions</h2>
+            <p>Find quick answers to common legal, operational, and financial inquiries.</p>
+        </div>
+
+        <div class="faq-wrapper">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>When and how are monthly investor payouts disbursed?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Payouts are calculated at the end of each calendar month based on active rider rental days and transferred directly to your registered bank account within the first 7 business days of the following month.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Who covers maintenance costs and vehicle repairs?</span>
+                </i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Routine wear-and-tear servicing, battery swaps, and hub maintenance are completely managed by RIZZ EV hub technicians. Accidental damages caused by rider negligence are covered via rider onboarding security deposits or insurance.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I scale up my fleet size over time?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Yes! Many investors start with 1 to 5 vehicles and expand their fleet size as they see consistent monthly cashflows. You can attach new vehicles to your investor account at any time.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What happens if a rider defaults on daily rent?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Our IoT telematics system automatically immobilizes the scooter remote engine kill-switch upon rent default. Our field recovery team retrieves the vehicle and re-assigns it to an active rider on our waiting list.
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA BANNER -->
+        <section class="cta-card" id="partner-form">
+            <h2>Start Building Your EV Fleet Today</h2>
+            <p>Join India's fastest-growing zero-emission last-mile logistics ecosystem.</p>
+            <a href="contact.html" class="btn-green-cta">Contact Our Investor Team</a>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="rizz-footer">
+        <div class="rizz-footer-wrapper">
+            
+            <div class="rizz-f-col brand-col">
+                <a href="index.html#home" class="rizz-brand">
+                    <img src="images/logo.png" alt="rizz ev Logo" class="footer-logo-img">
+                </a>
+                <p class="rizz-manifesto">
+                    Redefining urban logistics across India. Empowering daily delivery partners with smart, affordable electric fleets.
+                </p>
+                <div class="rizz-social-row">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/yourpage" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/rapx_ev" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/yourhandle" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://wa.me/918884446804" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="rizz-f-col">
+                <h4 class="col-title">Navigation</h4>
+                <ul class="rizz-nav-list">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="riders.html">Rider Portal</a></li>
+                    <li><a href="investors.html">Fleet Owners</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="rizz-f-col">
+                <h4 class="col-title">Policies</h4>
+                <ul class="rizz-nav-list">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="rental-agreement.html">Rental Agreement</a></li>
+                <li><a href="fleet-investor-policy.html">Fleet Investor Policy</a></li>
+                 <li><a href="support-faq.html">Support & FAQ</a></li>
+                </ul>
+            </div>
+
+
+<!-- Column 4: Location & Direct Contact -->
+            <div class="rizz-f-col contact-col">
+            <h4 class="col-title">Get In Touch</h4>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Bommanahalli,<br>Bangalore, Karnataka 560068</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>+91 88844 46804</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info.rizzev@gmail.com&su=Inquiry%20regarding%20RIZZ%20EV" target="_blank" rel="noopener noreferrer">
+    info.rizzev@gmail.com
+</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rizz-footer-bottom">
+            <p>© 2026 rizz ev. All rights reserved.</p>
+            <span class="pill-badge">⚡ Zero Emission Fleet Platform</span>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // ROI CALCULATOR SCRIPT
+        const slider = document.getElementById('bikeSlider');
+        const bikeText = document.getElementById('bikeText');
+        const totalInvest = document.getElementById('totalInvest');
+        const monthlyPayout = document.getElementById('monthlyPayout');
+        const annualPayout = document.getElementById('annualPayout');
+
+        function updateRoi() {
+            const bikes = parseInt(slider.value);
+            bikeText.innerText = bikes;
+
+            const investment = bikes * 75000;
+            const monthly = bikes * 3200;
+            const annual = monthly * 12;
+
+            totalInvest.innerText = '₹' + investment.toLocaleString('en-IN');
+            monthlyPayout.innerText = '₹' + monthly.toLocaleString('en-IN');
+            annualPayout.innerText = '₹' + annual.toLocaleString('en-IN');
+        }
+
+        slider.addEventListener('input', updateRoi);
+        updateRoi();
+
+        // FAQ ACCORDION SCRIPT
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        
+    </script>
+
+    <script>
+    // 1. Force browser to handle manual scroll restoration so it doesn't auto-remember on refresh
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // 2. Save scroll position on scroll
+    window.addEventListener('scroll', function() {
+        if (history.replaceState) {
+            history.replaceState({ scroll: window.scrollY }, document.title);
+        }
+    }, { passive: true });
+
+    // 3. Clear state on a fresh page load/refresh so it forces the top
+    window.addEventListener('DOMContentLoaded', function() {
+        // If the user just hit refresh, clear the history state scroll memory
+        if (performance.navigation.type === 1 || window.performance?.getEntriesByType("navigation")[0]?.type === "reload") {
+            window.scrollTo(0, 0);
+            if (history.replaceState) {
+                history.replaceState({ scroll: 0 }, document.title);
+            }
+        }
+    });
+
+    // 4. Restore exact position ONLY when using the Back button
+    window.addEventListener('pageshow', function(event) {
+        const isReload = performance.navigation.type === 1;
+        if (!isReload && history.state && history.state.scroll !== undefined) {
+            window.scrollTo(0, history.state.scroll);
+        }
+    });
+</script>
+
+</body>
+</html>
