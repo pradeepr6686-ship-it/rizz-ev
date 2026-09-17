@@ -121,40 +121,52 @@ nav ul li a:hover {
     padding-top: 140px;
 }
 
-/* --- Mobile Responsive Fixes --- */
 @media (max-width: 768px) {
-  /* Prevent horizontal side-scrolling overflow */
-  body, html {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Fix the oversized top navigation header card */
-  header, .navbar, .nav-container, .nav-menu {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 12px 15px !important;
-    border-radius: 0 0 12px 12px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Force multi-column grids to stack vertically on phones */
-  .grid, .infrastructure-grid, .features-grid, .comparison-table, div[class*="grid"] {
+  /* Keep the header compact and clean */
+  header, .navbar, .nav-container {
     display: flex !important;
     flex-direction: column !important;
-    width: 100% !important;
+    align-items: center !important;
+    width: 92% !important;
+    max-width: 92% !important;
+    margin: 10px auto !important;
+    padding: 12px !important;
+    border-radius: 16px !important;
     box-sizing: border-box !important;
-    padding: 0 10px !important;
   }
 
-  /* Make cards fit nicely inside mobile screens */
-  .card, div[class*="card"] {
+  /* Center and space out the logo */
+  .logo, .nav-logo {
+    margin-bottom: 8px !important;
+  }
+
+  /* Arrange nav links in a tight, clean horizontal row with wrapping or smaller font */
+  .nav-links, .nav-menu, nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px 12px !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 15px !important;
-    box-sizing: border-box !important;
+    margin: 5px 0 10px 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Shrink text slightly so all 5 links fit comfortably */
+  .nav-links a, .nav-menu a, nav ul li a {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    padding: 4px 6px !important;
+    color: #0d1b2a !important;
+  }
+
+  /* Make the Get Started button fit nicely */
+  .nav-cta, header .btn, .navbar .btn {
+    width: 100% !important;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    margin-top: 5px !important;
   }
 }
 
