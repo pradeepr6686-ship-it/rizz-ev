@@ -121,83 +121,7 @@ nav ul li a:hover {
     padding-top: 140px;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    height: auto !important;
-    padding: 12px 18px !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
 
-  /* Style the 3-line Hamburger Button */
-  .hamburger-btn {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-  }
-
-  .hamburger-btn span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #00c853;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  /* Hide navigation links by default on mobile */
-  .nav-links {
-    display: none !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    background: #ffffff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 20px 0;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border-radius: 0 0 20px 20px;
-    list-style: none;
-    text-align: center;
-    z-index: 999;
-  }
-
-  /* When JS adds .active class, show the dropdown menu */
-  .nav-links.active {
-    display: flex !important;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-
-  .nav-links li a {
-    font-size: 16px !important;
-    color: #0f172a !important;
-    font-weight: 600;
-  }
-
-  /* Hide desktop CTA button inside navbar on small mobile screens if needed, or keep it compact */
-  .nav-right {
-    display: none; 
-  }
-}
-
-/* Hide hamburger button on desktop screens */
-@media (min-width: 769px) {
-  .hamburger-btn {
-    display: none !important;
-  }
-}
 
 /* =========================
    HERO SECTION (PREMIUM LOOK)
@@ -1857,4 +1781,82 @@ nav ul li a:hover {
     }
 }
 
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto !important;
+    padding: 12px 18px !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Style the 3-line Hamburger Button */
+  .hamburger-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  .hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #00c853;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Hide navigation links by default on mobile */
+  .nav-links {
+    display: none !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-radius: 0 0 20px 20px;
+    list-style: none;
+    text-align: center;
+    z-index: 999;
+  }
+
+  /* When JS adds .active class, show the dropdown menu */
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    font-size: 16px !important;
+    color: #0f172a !important;
+    font-weight: 600;
+  }
+
+  /* Hide desktop CTA button inside navbar on small mobile screens if needed, or keep it compact */
+  .nav-right {
+    display: none; 
+  }
+}
+
+/* Hide hamburger button on desktop screens */
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none !important;
+  }
+}
 
