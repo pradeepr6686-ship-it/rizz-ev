@@ -121,6 +121,37 @@ nav ul li a:hover {
     padding-top: 140px;
 }
 
+@media (max-width: 768px) {
+  /* Make the header bar span full width cleanly */
+  header, .navbar, .nav-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 10px 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force navigation links to sit in a neat, clean row or wrap nicely */
+  .nav-links, .nav-menu, nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 10px 0 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Adjust individual menu link sizes for phones */
+  .nav-links a, .nav-menu a, nav ul li a {
+    font-size: 14px !important;
+    padding: 6px 10px !important;
+  }
+}
+
 /* =========================
    HERO SECTION (PREMIUM LOOK)
 ========================= */
