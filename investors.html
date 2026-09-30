@@ -967,6 +967,48 @@
             .rizz-footer-wrapper { grid-template-columns: 1fr; }
             .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
+
+        /* =========================================
+   MOBILE RESPONSIVE FIXES
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Fix Navbar for Mobile */
+    .navbar {
+        width: 95% !important;
+        padding: 0 15px !important;
+        height: 65px !important;
+    }
+    
+    /* Hide desktop links and show hamburger button */
+    .nav-links {
+        display: none; /* Toggle via your JavaScript drawer if desired */
+    }
+    
+    .hamburger-btn {
+        display: flex !important;
+    }
+
+    /* 2. Stack Footer and Grid Columns on Mobile */
+    .rizz-footer-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    /* 3. Fix Unit Economics & ROI Tables/Cards */
+    .metrics-grid, 
+    .economics-grid, 
+    .calculator-container {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    /* Prevent text overflowing out of cards */
+    .contact-item, .rizz-manifesto, p {
+        word-break: break-word;
+    }
+}
+
     </style>
 
 </head>
