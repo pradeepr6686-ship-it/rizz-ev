@@ -9,8 +9,8 @@
     <!-- Google Fonts import to match index.html typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
     <style>
         /* =========================================
            RESET & CORE PAGE STYLES
@@ -29,98 +29,7 @@
             overflow-x: hidden;
         }
 
-        /* =========================================
-           FLOATING MODERN NAVBAR (MATCHES INDEX)
-        ========================================= */
-        .navbar {
-            position: fixed;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 92%;
-            max-width: 1300px;
-            height: 75px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 35px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            height: 100%;
-        }
-
-        .logo img {
-            height: 52px;
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: scale(1.03);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            gap: 32px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #10b981;
-            font-size: 15px;
-            font-weight: 600;
-            transition: color 0.3s ease, transform 0.2s ease;
-            display: inline-block;
-        }
-
-        nav ul li a:hover {
-            color: #047857;
-            transform: translateY(-1px);
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .btn-primary {
-            background: #00c853;
-            color: #ffffff;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.25);
-        }
-
-        .btn-primary:hover {
-            background: #00a843;
-            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.35);
-            transform: translateY(-2px);
-        }
+        
 
         /* =========================================
            FULL-WIDTH HERO BACKGROUND VIDEO (MATCHES INVESTOR)

@@ -699,20 +699,34 @@
 </script>
 
 <script>
-    // 1. When clicking any link away from index.html, save our current scroll position
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            sessionStorage.setItem('rizz_scroll_pos', window.scrollY);
-        });
+    // 1. Force browser to handle manual scroll restoration so it doesn't auto-remember on refresh
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // 2. Save scroll position on scroll
+    window.addEventListener('scroll', function() {
+        if (history.replaceState) {
+            history.replaceState({ scroll: window.scrollY }, document.title);
+        }
+    }, { passive: true });
+
+    // 3. Clear state on a fresh page load/refresh so it forces the top
+    window.addEventListener('DOMContentLoaded', function() {
+        // If the user just hit refresh, clear the history state scroll memory
+        if (performance.navigation.type === 1 || window.performance?.getEntriesByType("navigation")[0]?.type === "reload") {
+            window.scrollTo(0, 0);
+            if (history.replaceState) {
+                history.replaceState({ scroll: 0 }, document.title);
+            }
+        }
     });
 
-    // 2. When coming back via browser history (Back button), restore that exact scroll position
+    // 4. Restore exact position ONLY when using the Back button
     window.addEventListener('pageshow', function(event) {
-        if (event.persisted || performance.navigation.type === 2) { // Type 2 is BACK/FORWARD
-            const savedPosition = sessionStorage.getItem('rizz_scroll_pos');
-            if (savedPosition) {
-                window.scrollTo(0, parseInt(savedPosition));
-            }
+        const isReload = performance.navigation.type === 1;
+        if (!isReload && history.state && history.state.scroll !== undefined) {
+            window.scrollTo(0, history.state.scroll);
         }
     });
 </script>
