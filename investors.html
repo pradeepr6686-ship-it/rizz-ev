@@ -969,7 +969,22 @@
         }
 
         
-        
+        @media (max-width: 992px) {
+    .metrics-grid, 
+    .roadmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .metrics-grid, 
+    .roadmap-grid, 
+    .investor-grid, 
+    .ecosystem-grid, 
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
     </style>
 
