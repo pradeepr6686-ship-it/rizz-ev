@@ -968,47 +968,79 @@
             .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
 
-        /* =========================================
-   MOBILE RESPONSIVE FIXES
-========================================= */
-@media (max-width: 768px) {
-    /* 1. Fix Navbar for Mobile */
-    .navbar {
-        width: 95% !important;
-        padding: 0 15px !important;
-        height: 65px !important;
-    }
-    
-    /* Hide desktop links and show hamburger button */
-    .nav-links {
-        display: none; /* Toggle via your JavaScript drawer if desired */
-    }
-    
-    .hamburger-btn {
-        display: flex !important;
-    }
-
-    /* 2. Stack Footer and Grid Columns on Mobile */
-    .rizz-footer-wrapper {
-        grid-template-columns: 1fr !important;
-        gap: 30px !important;
-    }
-
-    /* 3. Fix Unit Economics & ROI Tables/Cards */
+        @media (max-width: 992px) {
     .metrics-grid, 
-    .economics-grid, 
-    .calculator-container {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        padding: 0 10px !important;
+    .roadmap-grid, 
+    .investor-grid, 
+    .ecosystem-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
-    /* Prevent text overflowing out of cards */
-    .contact-item, .rizz-manifesto, p {
-        word-break: break-word;
+    .security-wrapper,
+    .calc-grid,
+    .unit-grid,
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
+@media (max-width: 768px) {
+    .metrics-grid, 
+    .roadmap-grid, 
+    .investor-grid, 
+    .ecosystem-grid,
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content-video h1 {
+        font-size: 32px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .container {
+        padding: 0 4% 60px;
+    }
+
+    .security-wrapper,
+    .calculator-wrapper,
+    .unit-economics-wrapper,
+    .deck-download-card,
+    .cta-card {
+        padding: 25px 20px;
+    }
+
+    .hero-video-layout {
+        padding: 100px 5% 40px;
+        min-height: auto;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .deck-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .deck-highlights ul {
+        grid-template-columns: 1fr;
+    }
+}
+        
 
     </style>
 
