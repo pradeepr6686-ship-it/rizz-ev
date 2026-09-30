@@ -360,6 +360,102 @@
             .rizz-footer-wrapper { grid-template-columns: 1fr; }
             .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
+
+        /* =========================================
+   MOBILE RESPONSIVENESS FIXES (ADD TO BOTTOM)
+========================================= */
+
+@media (max-width: 992px) {
+    /* Navbar adjustments for tablets */
+    .navbar {
+        width: 95%;
+        padding: 0 20px;
+    }
+    
+    nav ul {
+        gap: 16px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    /* Stack narrative & mission/vision grids */
+    .story-wrapper,
+    .dual-grid,
+    .architecture-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    /* Metrics grid drop to 2 columns on tablets */
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide desktop nav links on small mobile if you haven't implemented a toggle yet, 
+       or stack/simplify them so they don't overflow */
+    nav ul {
+        display: none; /* Tip: Add a mobile drawer menu here if needed */
+    }
+
+    .navbar {
+        height: 65px;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    /* Hero section text scaling */
+    .hero-photo-layout {
+        padding: 110px 5% 60px;
+        min-height: auto;
+    }
+
+    .hero-content-photo h1 {
+        font-size: 32px !important;
+        line-height: 1.3;
+    }
+
+    .hero-content-photo p {
+        font-size: 15px !important;
+    }
+
+    /* Containers and section spacing */
+    .container {
+        padding: 0 4% 50px;
+    }
+
+    .section-header h2, 
+    .story-text h2, 
+    .cta-card h2 {
+        font-size: 28px !important;
+    }
+
+    /* Metrics grid drop to single column on phones */
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .metric-item h3 {
+        font-size: 32px;
+    }
+
+    /* Card padding reduction for mobile viewports */
+    .quote-card, 
+    .dual-card, 
+    .arch-card, 
+    .cta-card {
+        padding: 25px 20px;
+    }
+}
     </style>
 </head>
 <body>
