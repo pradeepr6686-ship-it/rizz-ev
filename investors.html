@@ -951,52 +951,93 @@
             display: block;
         }
 
-        /* =========================================
-       RESPONSIVE BREAKPOINTS
-       ========================================= */
-    @media (max-width: 992px) {
-        .hero-video-layout { 
-            min-height: 70vh; 
-            padding-top: 120px; 
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 992px) {
+            .hero-video-layout { min-height: 70vh; padding-top: 120px; }
+            .hero-content-video h1 { font-size: 36px; }
+            .benefits-grid, .calc-grid, .process-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
         }
-        .hero-content-video h1 { 
-            font-size: 36px; 
+
+        @media (max-width: 768px) {
+            .navbar nav { display: none; }
         }
-        .benefits-grid, 
-        .calc-grid, 
-        .process-grid, 
-        .testimonials-grid,
-        .metrics-grid, 
-        .roadmap-grid { 
-            grid-template-columns: repeat(2, 1fr); 
+
+        @media (max-width: 600px) {
+            .rizz-footer-wrapper { grid-template-columns: 1fr; }
+            .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
-        .rizz-footer-wrapper { 
-            grid-template-columns: 1fr 1fr; 
-            gap: 40px; 
-        }
+
+        
+ @media (max-width: 768px) {
+    /* Ensure the hero container and wrapper match your rider page layout */
+    .hero-video-layout {
+        position: relative;
+        width: 100%;
+        padding: 40px 5% 60px;
+        margin: 0;
+        box-sizing: border-box;
     }
 
-    @media (max-width: 768px) {
-        .navbar nav { 
-            display: none; 
-        }
+    /* Style the header/logo container to match the floating white card look */
+    .navbar, .header-container, .logo-wrapper {
+        width: 92% !important;
+        margin: 0 auto 20px auto !important;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 12px 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
     }
 
-    @media (max-width: 600px) {
-        .metrics-grid, 
-        .roadmap-grid, 
-        .investor-grid, 
-        .ecosystem-grid, 
-        .plans-grid,
-        .rizz-footer-wrapper { 
-            grid-template-columns: 1fr; 
-        }
-        .rizz-footer-bottom { 
-            flex-direction: column; 
-            gap: 15px; 
-            text-align: center; 
-        }
+    /* Center-align and format text elements cleanly inside the hero */
+    .hero-content-video {
+        text-align: center;
+        width: 100%;
     }
+
+    .hero-content-video h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-content-video p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ensures your top logo container matches the floating white card style */
+    .navbar, .header-container, .logo-wrapper {
+        width: 92% !important;
+        margin: 0 auto 20px auto !important;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 12px 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 992px) {
+    .metrics-grid, 
+    .roadmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .metrics-grid, 
+    .roadmap-grid, 
+    .investor-grid, 
+    .ecosystem-grid, 
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
     </style>
 
