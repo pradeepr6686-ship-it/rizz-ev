@@ -951,40 +951,52 @@
             display: block;
         }
 
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 992px) {
-            .hero-video-layout { min-height: 70vh; padding-top: 120px; }
-            .hero-content-video h1 { font-size: 36px; }
-            
-            .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
+        /* =========================================
+       RESPONSIVE BREAKPOINTS
+       ========================================= */
+    @media (max-width: 992px) {
+        .hero-video-layout { 
+            min-height: 70vh; 
+            padding-top: 120px; 
         }
-
-        @media (max-width: 768px) {
-            .navbar nav { display: none; }
+        .hero-content-video h1 { 
+            font-size: 36px; 
         }
-
-        @media (max-width: 600px) {
-            .rizz-footer-wrapper { grid-template-columns: 1fr; }
-            .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+        .benefits-grid, 
+        .calc-grid, 
+        .process-grid, 
+        .testimonials-grid,
+        .metrics-grid, 
+        .roadmap-grid { 
+            grid-template-columns: repeat(2, 1fr); 
         }
-
-        
-        @media (max-width: 992px) {
-    .metrics-grid, 
-    .roadmap-grid {
-        grid-template-columns: repeat(2, 1fr);
+        .rizz-footer-wrapper { 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+        }
     }
-}
 
-@media (max-width: 600px) {
-    .metrics-grid, 
-    .roadmap-grid, 
-    .investor-grid, 
-    .ecosystem-grid, 
-    .plans-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+        .navbar nav { 
+            display: none; 
+        }
     }
-}
+
+    @media (max-width: 600px) {
+        .metrics-grid, 
+        .roadmap-grid, 
+        .investor-grid, 
+        .ecosystem-grid, 
+        .plans-grid,
+        .rizz-footer-wrapper { 
+            grid-template-columns: 1fr; 
+        }
+        .rizz-footer-bottom { 
+            flex-direction: column; 
+            gap: 15px; 
+            text-align: center; 
+        }
+    }
 
     </style>
 
