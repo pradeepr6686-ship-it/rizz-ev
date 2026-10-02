@@ -720,23 +720,6 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-/* Mobile Responsiveness for Technology */
-@media (max-width: 992px) {
-    .tech-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .tech-visual-wrapper {
-        margin-top: 20px;
-    }
-
-    .badge-top-right, .badge-bottom-left {
-        position: static;
-        margin: 10px auto;
-        width: fit-content;
-    }
-}
 
 .why-now {
     padding: 120px 8%;
@@ -1273,7 +1256,7 @@ nav ul li a:hover {
     background: linear-gradient(180deg, #0d131f 0%, #080c14 100%);
     color: #94a3b8;
     padding: 80px 8% 30px;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1318,6 +1301,7 @@ nav ul li a:hover {
     color: #cbd5e1;
     margin-bottom: 25px;
     max-width: 310px;
+     font-weight: 500;
 }
 
 .rizz-social-row {
@@ -1326,9 +1310,9 @@ nav ul li a:hover {
 }
 
 .social-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #ffffff;
@@ -1336,23 +1320,27 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    font-size: 15px;
     transition: all 0.3s ease;
 }
 
 .social-btn:hover {
     background: #00e676;
     color: #080c14;
+    border-color: #00e676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); /* Green Glow */
     transform: translateY(-3px);
 }
 
 /* Column Titles */
 .col-title {
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 800; /* Bolder to match Image 2 */
     margin-bottom: 24px;
     position: relative;
-    padding-left: 12px;
+    padding-left: 14px;
+    letter-spacing: -0.3px;
 }
 
 .col-title::before {
@@ -1362,10 +1350,12 @@ nav ul li a:hover {
     top: 50%;
     transform: translateY(-50%);
     width: 4px;
-    height: 16px;
+    height: 18px;
     background: #00e676;
     border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.6); /* Glowing accent line */
 }
+
 
 /* Navigation Lists */
 .rizz-nav-list {
@@ -1375,20 +1365,22 @@ nav ul li a:hover {
 }
 
 .rizz-nav-list li {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .rizz-nav-list a {
     color: #94a3b8;
     text-decoration: none;
     font-size: 14px;
-    transition: all 0.2s ease;
+    font-weight: 500;
+    transition: all 0.25s ease;
     display: inline-block;
 }
 
 .rizz-nav-list a:hover {
     color: #00e676;
-    transform: translateX(5px);
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4); /* Text Glow */
+    transform: translateX(4px);
 }
 
 /* Contact Column */
@@ -1405,16 +1397,18 @@ nav ul li a:hover {
     font-size: 14px;
     line-height: 1.5;
     color: #cbd5e1;
+    font-weight: 500;
 }
 
 .contact-item a {
     color: #cbd5e1;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .contact-item a:hover {
     color: #00e676;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
 }
 
 /* Bottom Bar */
@@ -1428,6 +1422,7 @@ nav ul li a:hover {
     align-items: center;
     font-size: 13px;
     color: #64748b;
+    font-weight: 500;
 }
 
 .rizz-footer-bottom strong {
@@ -1436,12 +1431,14 @@ nav ul li a:hover {
 
 .pill-badge {
     background: rgba(0, 230, 118, 0.1);
-    border: 1px solid rgba(0, 230, 118, 0.25);
+    border: 1px solid rgba(0, 230, 118, 0.3);
     color: #00e676;
-    padding: 6px 16px;
+    padding: 6px 18px;
     border-radius: 30px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.15);
 }
 
 /* Responsive Rules */
@@ -1468,7 +1465,7 @@ nav ul li a:hover {
     height: 45px; /* Adjust height based on your logo image dimensions */
     width: auto;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: block;
 }
 
@@ -1858,4 +1855,34 @@ nav ul li a:hover {
     display: none !important;
   }
 }
+
+
+/* Mobile Responsiveness for Technology */
+@media (max-width: 992px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .tech-visual-wrapper {
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .tech-main-img {
+        max-width: 100%;
+        height: auto;
+        min-height: 260px;
+    }
+
+    /* Reset absolute positioning so they stack nicely below the image on mobile */
+    .tech-badge {
+        position: static !important;
+        width: 100%;
+        margin-top: 12px;
+        justify-content: flex-start;
+    }
+}
+
 
