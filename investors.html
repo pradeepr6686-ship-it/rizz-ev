@@ -968,76 +968,98 @@
             .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
 
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 992px) {
+            .hero-video-layout { min-height: 70vh; padding-top: 120px; }
+            .hero-content-video h1 { font-size: 36px; }
+            .benefits-grid, .calc-grid, .process-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar nav { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .rizz-footer-wrapper { grid-template-columns: 1fr; }
+            .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+/* --- ADD THE NEW CODE BELOW YOUR EXISTING CODE --- */
+        @media (max-width: 992px) {
+            .metrics-grid, 
+            .roadmap-grid, 
+            .investor-grid, 
+            .ecosystem-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .security-wrapper,
+            .calc-grid,
+            .unit-grid,
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid, 
+            .roadmap-grid, 
+            .investor-grid, 
+            .ecosystem-grid,
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content-video h1 {
+                font-size: 32px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .container {
+                padding: 0 4% 60px;
+            }
+
+            .security-wrapper,
+            .calculator-wrapper,
+            .unit-economics-wrapper,
+            .deck-download-card,
+            .cta-card {
+                padding: 25px 20px;
+            }
+
+            .hero-video-layout {
+                padding: 100px 5% 40px;
+                min-height: auto;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero-actions a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .deck-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .deck-highlights ul {
+                grid-template-columns: 1fr;
+            }
+        }
         
- @media (max-width: 768px) {
-    /* Ensure the hero container and wrapper match your rider page layout */
-    .hero-video-layout {
-        position: relative;
-        width: 100%;
-        padding: 40px 5% 60px;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    /* Style the header/logo container to match the floating white card look */
-    .navbar, .header-container, .logo-wrapper {
-        width: 92% !important;
-        margin: 0 auto 20px auto !important;
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 12px 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        box-sizing: border-box;
-    }
-
-    /* Center-align and format text elements cleanly inside the hero */
-    .hero-content-video {
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-content-video h1 {
-        font-size: 30px;
-        line-height: 1.2;
-        margin-bottom: 15px;
-    }
-
-    .hero-content-video p {
-        font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Ensures your top logo container matches the floating white card style */
-    .navbar, .header-container, .logo-wrapper {
-        width: 92% !important;
-        margin: 0 auto 20px auto !important;
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 12px 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 992px) {
-    .metrics-grid, 
-    .roadmap-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .metrics-grid, 
-    .roadmap-grid, 
-    .investor-grid, 
-    .ecosystem-grid, 
-    .plans-grid {
-        grid-template-columns: 1fr;
-    }
-}
+ 
 
     </style>
 
