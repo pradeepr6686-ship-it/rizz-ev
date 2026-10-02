@@ -1876,13 +1876,11 @@ nav ul li a:hover {
         min-height: 260px;
     }
 
-    /* Reset absolute positioning so they stack nicely below the image on mobile */
-    .tech-badge {
+    .badge-top-right, 
+    .badge-bottom-left {
         position: static !important;
         width: 100%;
         margin-top: 12px;
         justify-content: flex-start;
     }
 }
-
-
