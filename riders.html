@@ -614,12 +614,12 @@
         }
 
 /* =========================================
-   HAMBURGER MENU STYLES (MOBILE)
+   GLOBAL HAMBURGER & MOBILE NAVBAR STYLES
    ========================================= */
 
 /* Style the 3-line Hamburger Button */
 .hamburger-btn {
-  display: flex !important;
+  display: none; /* Hidden by default on desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -640,8 +640,13 @@
   transition: all 0.3s ease;
 }
 
-/* Hide navigation links by default on mobile */
+/* Mobile Screen Breakpoint Rules */
 @media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex !important;
+  }
+
+  /* FORCE hide navigation links by default on mobile */
   nav ul, .nav-links {
     display: none !important;
     flex-direction: column !important;
@@ -672,22 +677,19 @@
     color: #0f172a !important;
     font-weight: 600;
   }
-}
 
-/* Hide hamburger button on desktop screens */
-@media (min-width: 769px) {
-  .hamburger-btn {
-    display: none !important;
+  .nav-right {
+    display: none; 
   }
 }
-
+        
     </style>
 </head>
 <body>
 
     <!-- NAVBAR (MATCHES INDEX.HTML) -->
     <header class="navbar">
-    <a href="#" class="logo">
+    <a href="index.html" class="logo">
         <img src="images/logo.png" alt="RIZZ EV Logo">
     </a>
 
@@ -707,7 +709,11 @@
           <span></span>
         </button>
     </nav>
-</header>
+
+        <div class="nav-right">
+            <a href="contact.html" class="btn-primary">Get Started</a>
+        </div>
+    </header>
 
     <!-- FULL-WIDTH HERO SECTION WITH BACKGROUND VIDEO -->
     <section class="hero-video-layout">
