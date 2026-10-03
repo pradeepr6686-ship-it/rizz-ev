@@ -657,17 +657,7 @@
     }
 }
 
-/* =========================================
-   HAMBURGER BUTTON & MOBILE MENU
-   ========================================= */
-
-/* Hidden by default on desktop */
-.hamburger-btn {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  /* Force the hamburger button to show on mobile */
+/* Style the 3-line Hamburger Button */
   .hamburger-btn {
     display: flex !important;
     flex-direction: column;
@@ -687,18 +677,19 @@
     height: 3px;
     background-color: #00c853;
     border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
-  /* Dropdown mobile menu */
-  .nav-links {
+  /* FORCE hide navigation links by default on mobile */
+  nav ul, .nav-links {
     display: none !important;
     flex-direction: column !important;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
+    width: 100% !important;
     background: #ffffff;
-    padding: 25px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     border-radius: 0 0 20px 20px;
     list-style: none;
@@ -706,26 +697,33 @@
     z-index: 999;
   }
 
-  /* Active state triggered by JavaScript */
-  .nav-links.active {
+  /* When JavaScript adds .active class, show the menu */
+  nav ul.active, .nav-links.active {
     display: flex !important;
   }
 
-  .nav-links li {
-    margin: 12px 0;
+  nav ul li {
+    margin: 10px 0;
   }
 
-  .nav-links li a {
+  nav ul li a {
     font-size: 16px !important;
     color: #0f172a !important;
     font-weight: 600;
-    text-decoration: none;
   }
 
   .nav-right {
     display: none; 
   }
+
+
+/* Hide hamburger button on desktop screens */
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none !important;
+  }
 }
+
 
     </style>
 </head>
@@ -746,13 +744,14 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
         
-        <!-- Mobile Hamburger Button -->
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-    </nav>
+         
+    <!-- Mobile Hamburger Button -->
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+   </nav>
   
 
     <div class="nav-right">
@@ -1016,18 +1015,19 @@
 
    </script>
 
-        <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const navMenu = document.getElementById("navMenu");
+         <!-- Embedded Hamburger Menu Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const navMenu = document.querySelector(".nav-links") || document.querySelector(".nav-menu") || document.querySelector("nav ul");
 
-    if (hamburgerBtn && navMenu) {
-      hamburgerBtn.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
+        if (hamburgerBtn && navMenu) {
+          hamburgerBtn.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+          });
+        }
       });
-    }
-  });
-</script>
+    </script>
 
 
 
