@@ -658,18 +658,16 @@
 }
 
 /* =========================================
-   SIMPLE WORKING HAMBURGER MENU CSS
+   HAMBURGER BUTTON & MOBILE MENU
    ========================================= */
 
-/* Hide hamburger on desktop computers */
+/* Hidden by default on desktop */
 .hamburger-btn {
-  display: none !important;
+  display: none;
 }
 
-/* Mobile styles (when screen is smaller than 768px) */
 @media (max-width: 768px) {
-  
-  /* Show the hamburger button */
+  /* Force the hamburger button to show on mobile */
   .hamburger-btn {
     display: flex !important;
     flex-direction: column;
@@ -691,12 +689,12 @@
     border-radius: 2px;
   }
 
-  /* Hide the menu links by default on mobile */
+  /* Dropdown mobile menu */
   .nav-links {
     display: none !important;
     flex-direction: column !important;
     position: absolute;
-    top: 90px; /* Sits right below your floating navbar */
+    top: 90px;
     left: 0;
     width: 100%;
     background: #ffffff;
@@ -708,7 +706,7 @@
     z-index: 999;
   }
 
-  /* When JavaScript clicks the button, add 'active' to show the menu */
+  /* Active state triggered by JavaScript */
   .nav-links.active {
     display: flex !important;
   }
@@ -726,13 +724,6 @@
 
   .nav-right {
     display: none; 
-  }
-}
-
-/* Force show hamburger on mobile screens */
-@media (max-width: 768px) {
-  .hamburger-btn {
-    display: flex !important;
   }
 }
 
@@ -762,7 +753,6 @@
           <span></span>
         </button>
     </nav>
-
   
 
     <div class="nav-right">
