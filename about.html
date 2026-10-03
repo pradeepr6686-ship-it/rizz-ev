@@ -596,14 +596,9 @@
         gap: 15px;
         padding: 25px;
     }
-}
 
-@media (max-width: 768px) {
-    /* Hide desktop nav links on small mobile if you haven't implemented a toggle yet, 
-       or stack/simplify them so they don't overflow */
-    nav ul {
-        display: none; /* Tip: Add a mobile drawer menu here if needed */
-    }
+
+
 
     .navbar {
        height: auto !important;
@@ -657,7 +652,17 @@
     }
 }
 
-/* Style the 3-line Hamburger Button */
+/* =========================================
+   MOBILE RESPONSIVE HAMBURGER & NAV MENU
+   ========================================= */
+
+/* Hide hamburger button by default on desktop */
+.hamburger-btn {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  /* Show hamburger button on mobile */
   .hamburger-btn {
     display: flex !important;
     flex-direction: column;
@@ -680,7 +685,7 @@
     transition: all 0.3s ease;
   }
 
-  /* FORCE hide navigation links by default on mobile */
+  /* Override old hidden rules and show dropdown when active */
   nav ul, .nav-links {
     display: none !important;
     flex-direction: column !important;
@@ -697,7 +702,6 @@
     z-index: 999;
   }
 
-  /* When JavaScript adds .active class, show the menu */
   nav ul.active, .nav-links.active {
     display: flex !important;
   }
@@ -710,20 +714,13 @@
     font-size: 16px !important;
     color: #0f172a !important;
     font-weight: 600;
+    text-decoration: none;
   }
 
   .nav-right {
     display: none; 
   }
-
-
-/* Hide hamburger button on desktop screens */
-@media (min-width: 769px) {
-  .hamburger-btn {
-    display: none !important;
-  }
 }
-
 
     </style>
 </head>
