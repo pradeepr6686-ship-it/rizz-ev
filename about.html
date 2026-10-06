@@ -735,28 +735,30 @@
 
     <!-- NAVBAR -->
 <header class="navbar">
-    <div class="logo">
-        <a href="index.html"><img src="images/logo.png" alt="Rizz EV Logo" class="footer-logo-img"></a>
-    </div>
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="RIZZ EV Logo">
+    </a>
 
-    <!-- YOUR NAVIGATION LINKS -->
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="fleet.html">Fleet</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+   
 
-    <!-- THIS IS THE HAMBURGER BUTTON (MAKE SURE THIS EXISTS IN YOUR HTML) -->
-    <button class="hamburger-btn" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+   <nav>
+    <ul class="nav-links" id="navMenu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="riders.html">Rider Portal</a></li>
+        <li><a href="investors.html">Fleet Owners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <!-- Mobile Hamburger Button -->
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
    </nav>
-  
+
+    
 
     <div class="nav-right">
         <a href="index.html#apply" class="btn-primary">Get Started</a>
@@ -1019,7 +1021,7 @@
 
    </script>
 
-         <!-- Embedded Hamburger Menu Script -->
+          <!-- Embedded Hamburger Menu Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const hamburgerBtn = document.getElementById("hamburgerBtn");
