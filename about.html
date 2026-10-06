@@ -664,17 +664,17 @@
 @media (max-width: 768px) {
   /* Show hamburger button on mobile */
   .hamburger-btn {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-  }
+  display: flex !important; /* Force it to show globally for a quick test */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
 
   .hamburger-btn span {
     display: block;
@@ -728,25 +728,25 @@
 
     <!-- NAVBAR -->
 <header class="navbar">
-    <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="RIZZ EV Logo">
-    </a>
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Rizz EV Logo" class="footer-logo-img"></a>
+    </div>
 
+    <!-- YOUR NAVIGATION LINKS -->
     <nav>
-        <ul class="nav-links" id="navMenu">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="riders.html">Rider Portal</a></li>
-            <li><a href="investors.html">Fleet Owners</a></li>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        
-         
-    <!-- Mobile Hamburger Button -->
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
+    </nav>
+
+    <!-- THIS IS THE HAMBURGER BUTTON (MAKE SURE THIS EXISTS IN YOUR HTML) -->
+    <button class="hamburger-btn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
    </nav>
   
