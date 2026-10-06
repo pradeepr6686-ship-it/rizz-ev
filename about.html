@@ -664,17 +664,19 @@
 
   /* Style the 3-line Hamburger Button */
   .hamburger-btn {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-  }
+  display: flex !important; /* Force it to show globally for a quick test */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+  
 
   .hamburger-btn span {
     display: block;
@@ -685,7 +687,23 @@
     transition: all 0.3s ease;
   }
 
-  
+  /* FORCE hide navigation links by default on mobile */
+  nav ul, .nav-links {
+    display: none !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-radius: 0 0 20px 20px;
+    list-style: none;
+    text-align: center;
+    z-index: 999;
+  }
+
   /* When JavaScript adds .active class, show the menu */
   nav ul.active, .nav-links.active {
     display: flex !important;
