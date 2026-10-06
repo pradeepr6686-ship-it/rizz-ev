@@ -1,986 +1,6 @@
-html {
-    scroll-behavior: smooth;
-}
-
 /* =========================
-   RESET
+   3-STEP WORKFLOW CONTAINER
 ========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: #ffffff;
-    color: #111111;
-    overflow-x: hidden;
-}
-
-/* =========================
-   FLOATING MODERN NAVBAR (ZYPP STYLE)
-========================= */
-
-.navbar {
-    position: fixed;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 92%;
-    max-width: 1300px;
-    height: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 35px;
-    background: #ffffff;
-    border-radius: 20px; /* Floating rounded card effect */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-/* LOGO FIT & PROPORTION */
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    height: 100%;
-}
-
-.logo img {
-    height: 52px; /* Large, prominent, and proportional */
-    width: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.03);
-}
-
-/* NAVIGATION LINKS */
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #10b981; /* Green text matching reference image */
-    font-size: 15px;
-    font-weight: 600;
-    transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-}
-
-nav ul li a:hover {
-    color: #047857;
-    transform: translateY(-1px);
-}
-
-/* RIGHT CTA BUTTON */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.nav-btn {
-    background: #00c853;
-    color: #ffffff;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 200, 83, 0.25);
-}
-
-.nav-btn:hover {
-    background: #00a843;
-    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.35);
-    transform: translateY(-2px);
-}
-
-/* HERO PADDING ADJUSTMENT */
-.hero {
-    padding-top: 140px;
-}
-
-
-
-/* =========================
-   HERO SECTION (PREMIUM LOOK)
-========================= */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 140px 8% 80px;
-    background: radial-gradient(circle at 80% 20%, rgba(0, 200, 83, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 10% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-                #f8fafc;
-    position: relative;
-    overflow: hidden;
-    gap: 40px;
-}
-
-/* Left Content Column */
-.hero-left {
-    max-width: 580px;
-    z-index: 2;
-}
-
-/* Glass Badge */
-.tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0, 200, 83, 0.1);
-    border: 1px solid rgba(0, 200, 83, 0.25);
-    color: #00a843;
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 24px;
-    backdrop-filter: blur(8px);
-}
-
-.hero-left h1 {
-    font-size: 56px;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    color: #0f172a;
-    margin-bottom: 20px;
-}
-
-/* Gradient Text Effect */
-.gradient-text {
-    background: linear-gradient(135deg, #00c853 0%, #059669 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-left p {
-    font-size: 17px;
-    color: #475569;
-    line-height: 1.7;
-    margin-bottom: 35px;
-}
-
-/* Action Buttons */
-.hero-buttons {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 40px;
-}
-
-.btn-primary {
-    background: #00c853;
-    color: #ffffff;
-    padding: 16px 32px;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 200, 83, 0.3);
-    display: inline-block;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 200, 83, 0.45);
-    background: #00b34a;
-}
-
-.btn-secondary {
-    background: #ffffff;
-    color: #0f172a;
-    padding: 16px 28px;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-    border-color: #00c853;
-    color: #00c853;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* Mini Highlights Bar (Under Hero Buttons) */
-.hero-stats-mini {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.mini-stat {
-    display: flex;
-    flex-direction: column;
-}
-
-.mini-stat strong {
-    font-size: 16px;
-    color: #0f172a;
-    font-weight: 700;
-}
-
-.mini-stat span {
-    font-size: 13px;
-    color: #64748b;
-}
-
-.hero-stats-mini .divider {
-    width: 1px;
-    height: 32px;
-    background: #cbd5e1;
-}
-
-/* Right Column (Image Showcase) */
-.hero-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-/* Glowing Aura behind Bike */
-.hero-glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    z-index: 0;
-}
-
-.primary-glow {
-    width: 380px;
-    height: 380px;
-    background: rgba(0, 200, 83, 0.22);
-}
-
-.secondary-glow {
-    width: 250px;
-    height: 250px;
-    background: rgba(16, 185, 129, 0.15);
-    top: 10%;
-    right: 10%;
-}
-
-/* Scooter Image with floating animation */
-.hero-bike {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12));
-    animation: floatBike 5s ease-in-out infinite;
-}
-
-@keyframes floatBike {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-/* Floating Glassmorphism Badges */
-.floating-badge {
-    position: absolute;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    animation: floatBadge 4s ease-in-out infinite alternate;
-}
-
-.badge-top {
-    top: 15%;
-    left: -10px;
-}
-
-.badge-bottom {
-    bottom: 10%;
-    right: 0px;
-    animation-delay: 2s;
-}
-
-@keyframes floatBadge {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-8px); }
-}
-
-.badge-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 200, 83, 0.12);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-.badge-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 0;
-}
-
-.badge-sub {
-    font-size: 12px;
-    color: #64748b;
-    margin: 0;
-}
-
-/* =========================
-   STATS BAR (NUMERIC METRICS)
-========================= */
-
-.stats-bar {
-    background: #0f172a;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 45px 8%;
-    gap: 30px;
-    flex-wrap: wrap;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.stat-item {
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.stat-item:hover {
-    transform: translateY(-6px);
-}
-
-.stat-item h3 {
-    font-size: 42px;
-    color: #00c853 !important;
-    font-weight: 800;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-}
-
-.stat-item p {
-    color: #94a3b8;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-/* =========================
-   WHY RIZZ EV SECTION
-========================= */
-
-.features {
-    padding: 100px 8%;
-    background: #0f172a;
-    color: #ffffff;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title h2 {
-    font-size: 42px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.section-title p {
-    color: #94a3b8;
-    font-size: 18px;
-    max-width: 650px;
-    margin: auto;
-    line-height: 1.7;
-}
-
-.section-divider {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #10b981, #059669);
-    margin: 20px auto 25px;
-    border-radius: 50px;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-/* Glassmorphism Feature Card */
-.feature-card {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(12px);
-    padding: 35px 30px;
-    border-radius: 20px;
-    text-align: left;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(16, 185, 129, 0.4);
-    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
-    background: rgba(30, 41, 59, 0.9);
-}
-
-/* Glowing Icon Badge Wrapper */
-.card-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-    background: rgba(16, 185, 129, 0.12);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    margin-bottom: 22px;
-    box-shadow: inset 0 0 12px rgba(16, 185, 129, 0.1);
-}
-
-.feature-card h3 {
-    margin-bottom: 12px;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.feature-card p {
-    color: #94a3b8;
-    line-height: 1.6;
-    font-size: 15px;
-}
-
-/* =========================
-   TECHNOLOGY SECTION (UPGRADED STYLES)
-========================= */
-
-.technology {
-    padding: 120px 8%;
-    background: #0f172a; /* Dark sleek background */
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-}
-
-.tech-container {
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-/* Tag & Header Alignment */
-.technology .section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.tech-tag {
-    display: inline-block;
-    background: rgba(0, 200, 83, 0.12);
-    border: 1px solid rgba(0, 200, 83, 0.3);
-    color: #00c853;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 18px;
-}
-
-.technology .section-title h2 {
-    color: #ffffff !important;
-    font-size: 42px;
-    font-weight: 800;
-}
-
-.technology .section-title p {
-    color: #94a3b8;
-    max-width: 650px;
-    margin: 15px auto 0;
-    font-size: 16px;
-}
-
-/* Tech Layout Grid */
-.tech-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-/* Left Feature Cards */
-.tech-features {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.tech-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 24px;
-    border-radius: 18px;
-    backdrop-filter: blur(10px);
-    transition: all 0.35s ease;
-    cursor: pointer;
-}
-
-.tech-card:hover {
-    transform: translateX(10px);
-    background: rgba(30, 41, 59, 0.9);
-    border-color: rgba(0, 200, 83, 0.4);
-    box-shadow: 0 10px 30px rgba(0, 200, 83, 0.12);
-}
-
-.tech-card-icon {
-    width: 52px;
-    height: 52px;
-    background: rgba(0, 200, 83, 0.12);
-    border: 1px solid rgba(0, 200, 83, 0.25);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    flex-shrink: 0;
-}
-
-.tech-card-content h3 {
-    color: #ffffff !important;
-    font-size: 19px;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.tech-card-content p {
-    color: #94a3b8;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* Right Visual Area */
-.tech-visual-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tech-visual-glow {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(0, 200, 83, 0.25) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(50px);
-    z-index: 0;
-}
-
-.tech-main-img {
-    width: 100%;
-    max-width: 520px;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    position: relative;
-    z-index: 1;
-    transition: transform 0.4s ease;
-}
-
-.tech-visual-wrapper:hover .tech-main-img {
-    transform: scale(1.02);
-}
-
-/* Floating Overlay Badges */
-.tech-badge {
-    position: absolute;
-    z-index: 2;
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(0, 200, 83, 0.3);
-    backdrop-filter: blur(12px);
-    padding: 12px 20px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.badge-top-right {
-    top: -15px;
-    right: -10px;
-}
-
-.badge-bottom-left {
-    bottom: -15px;
-    left: -10px;
-}
-
-.tech-badge strong {
-    color: #ffffff;
-    font-size: 13px;
-    display: block;
-}
-
-.tech-badge p {
-    color: #94a3b8;
-    font-size: 11px;
-    margin: 0;
-}
-
-/* Glowing Live Dot Animation */
-.pulse-dot {
-    width: 10px;
-    height: 10px;
-    background: #00c853;
-    border-radius: 50%;
-    box-shadow: 0 0 0 rgba(0, 200, 83, 0.7);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(0, 200, 83, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 200, 83, 0);
-    }
-}
-
-.badge-icon-sm {
-    width: 28px;
-    height: 28px;
-    background: rgba(0, 200, 83, 0.2);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-
-.why-now {
-    padding: 120px 8%;
-    background: #ffffff;
-}
-
-.why-now-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.why-card {
-    background: white;
-    padding: 40px;
-    border-radius: 24px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-}
-
-.why-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 200, 83, 0.20);
-}
-
-.why-card h3 {
-    margin-bottom: 15px;
-    color: #00c853;
-}
-
-.why-card p {
-    color: #666;
-    line-height: 1.8;
-}
-
-.future-section {
-    padding: 120px 8%;
-    background: linear-gradient(135deg, #f0fff5, #ffffff);
-    text-align: center;
-}
-
-.future-content {
-    max-width: 900px;
-    margin: auto;
-}
-
-.future-tag {
-    display: inline-block;
-    background: #e8fff0;
-    color: #00c853;
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.future-content h2 {
-    font-size: 52px;
-    margin-bottom: 25px;
-}
-
-.future-content p {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #666;
-}
-
-/* =========================
-   GROWTH VISION
-========================= */
-
-.growth-section {
-    padding: 120px 8%;
-    background: #ffffff;
-}
-
-.growth-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.growth-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 40px;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-}
-
-.growth-card:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 30px 60px rgba(0, 200, 83, 0.20);
-}
-
-.growth-card h3 {
-    margin-bottom: 20px;
-    color: #111111;
-    font-size: 24px;
-}
-
-.growth-card p {
-    color: #666;
-    line-height: 1.8;
-}
-
-/* =========================
-   OUR JOURNEY
-========================= */
-
-.journey-section {
-    padding: 120px 8%;
-    background: #f8fafc;
-}
-
-.timeline {
-    max-width: 900px;
-    margin: 60px auto 0;
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: #00c853;
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 70px;
-    margin-bottom: 50px;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #00c853;
-}
-
-.timeline-content {
-    background: white;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.timeline-content h3 {
-    margin-bottom: 10px;
-}
-
-.timeline-content p {
-    color: #666;
-    line-height: 1.7;
-}
-
-/* =========================
-   INVESTOR SECTION STYLES
-========================= */
-
-.investor-section {
-    padding: 120px 8%;
-    background: radial-gradient(circle at top right, rgba(0, 200, 83, 0.18), transparent 40%),
-                linear-gradient(135deg, #0f172a, #111827);
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-}
-
-.investor-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.investor-tag {
-    display: inline-block;
-    background: rgba(0, 200, 83, 0.15);
-    border: 1px solid rgba(0, 200, 83, 0.35);
-    color: #00e676;
-    padding: 8px 22px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 22px;
-    letter-spacing: 0.5px;
-}
-
-.investor-content h2 {
-    font-size: 46px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #ffffff !important;
-}
-
-.investor-content p {
-    font-size: 17px;
-    color: #cbd5e1 !important;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto 50px;
-}
-
-/* Grid Layout for Investment Cards */
-.investor-highlights {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
-    margin-bottom: 60px;
-}
-
-.highlight-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 30px 24px;
-    border-radius: 20px;
-    text-align: left;
-    transition: all 0.35s ease;
-}
-
-.highlight-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(0, 200, 83, 0.4);
-    box-shadow: 0 15px 35px rgba(0, 200, 83, 0.15);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.highlight-icon {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.highlight-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #ffffff !important;
-    margin-bottom: 10px;
-}
-
-.highlight-card p {
-    font-size: 14px;
-    color: #94a3b8 !important;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* 3-Step Workflow Container */
 .fleet-investment-steps {
     display: flex;
     justify-content: center;
@@ -1029,7 +49,9 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* CTA Buttons */
+/* =========================
+   CTA BUTTONS
+========================= */
 .investor-buttons {
     display: flex;
     justify-content: center;
@@ -1072,26 +94,9 @@ nav ul li a:hover {
     color: #0f172a;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .investor-content h2 {
-        font-size: 34px;
-    }
-    
-    .fleet-investment-steps {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .inv-step-arrow {
-        transform: rotate(90deg);
-    }
-}
-
 /* =========================
    HOW IT WORKS
 ========================= */
-
 .how-it-works {
     padding: 120px 8%;
     background: #f8fafc;
@@ -1134,7 +139,6 @@ nav ul li a:hover {
 /* =========================
    TESTIMONIALS
 ========================= */
-
 .testimonials {
     padding: 120px 8%;
     background: #f8fafc;
@@ -1188,7 +192,6 @@ nav ul li a:hover {
 /* =========================
    CONTACT
 ========================= */
-
 .contact-section {
     padding: 120px 8%;
     background: #ffffff;
@@ -1223,8 +226,9 @@ nav ul li a:hover {
     flex-wrap: wrap;
 }
 
-/* FLOATING WHATSAPP */
-
+/* =========================
+   FLOATING WHATSAPP
+========================= */
 .floating-whatsapp {
     position: fixed;
     right: 25px;
@@ -1251,7 +255,6 @@ nav ul li a:hover {
 /* =========================
    RIZZ EV CUSTOM FOOTER STYLES
 ========================= */
-
 .rizz-footer {
     background: linear-gradient(180deg, #0d131f 0%, #080c14 100%);
     color: #94a3b8;
@@ -1269,7 +272,6 @@ nav ul li a:hover {
     padding-bottom: 60px;
 }
 
-/* Brand Column */
 .rizz-brand {
     display: inline-flex;
     align-items: center;
@@ -1301,7 +303,7 @@ nav ul li a:hover {
     color: #cbd5e1;
     margin-bottom: 25px;
     max-width: 310px;
-     font-weight: 500;
+    font-weight: 500;
 }
 
 .rizz-social-row {
@@ -1328,15 +330,14 @@ nav ul li a:hover {
     background: #00e676;
     color: #080c14;
     border-color: #00e676;
-    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); /* Green Glow */
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
     transform: translateY(-3px);
 }
 
-/* Column Titles */
 .col-title {
     color: #ffffff;
     font-size: 18px;
-    font-weight: 800; /* Bolder to match Image 2 */
+    font-weight: 800;
     margin-bottom: 24px;
     position: relative;
     padding-left: 14px;
@@ -1353,11 +354,9 @@ nav ul li a:hover {
     height: 18px;
     background: #00e676;
     border-radius: 2px;
-    box-shadow: 0 0 10px rgba(0, 230, 118, 0.6); /* Glowing accent line */
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.6);
 }
 
-
-/* Navigation Lists */
 .rizz-nav-list {
     list-style: none;
     padding: 0;
@@ -1379,11 +378,10 @@ nav ul li a:hover {
 
 .rizz-nav-list a:hover {
     color: #00e676;
-    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4); /* Text Glow */
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
     transform: translateX(4px);
 }
 
-/* Contact Column */
 .contact-card {
     display: flex;
     flex-direction: column;
@@ -1411,7 +409,6 @@ nav ul li a:hover {
     text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
 }
 
-/* Bottom Bar */
 .rizz-footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
@@ -1441,34 +438,13 @@ nav ul li a:hover {
     box-shadow: 0 0 12px rgba(0, 230, 118, 0.15);
 }
 
-/* Responsive Rules */
-@media (max-width: 992px) {
-    .rizz-footer-wrapper {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 600px) {
-    .rizz-footer-wrapper {
-        grid-template-columns: 1fr;
-    }
-    .rizz-footer-bottom {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-}
-
-/* Logo Styling in Footer */
 .footer-logo-img {
-    height: 45px; /* Adjust height based on your logo image dimensions */
+    height: 45px;
     width: auto;
     object-fit: contain;
     margin-bottom: 20px;
     display: block;
 }
-
 
 .social-links {
     display: flex;
@@ -1501,7 +477,6 @@ nav ul li a:hover {
 /* =========================
    SCROLL ANIMATIONS & EFFECTS
 ========================= */
-
 .features,
 .technology,
 .future-section,
@@ -1514,6 +489,7 @@ nav ul li a:hover {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease;
+    will-change: opacity, transform;
 }
 
 .show {
@@ -1543,118 +519,8 @@ nav ul li a:hover {
 }
 
 /* =========================
-   MOBILE RESPONSIVENESS
-========================= */
-
-@media(max-width: 992px) {
-    .navbar {
-        top: 10px;
-        width: 95%;
-        padding: 0 20px;
-        height: 65px;
-    }
-
-    .logo img {
-        height: 42px;
-    }
-
-    nav ul {
-        gap: 18px;
-    }
-
-    nav ul li a {
-        font-size: 13px;
-    }
-
-    .nav-btn {
-        padding: 8px 18px;
-        font-size: 13px;
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 150px;
-    }
-
-    .hero-left {
-        max-width: 100%;
-    }
-
-    .hero-left h1 {
-        font-size: 42px;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-stats-mini {
-        justify-content: center;
-    }
-
-    .floating-badge {
-        display: none;
-    }
-}
-
-@media(max-width: 768px) {
-    .navbar {
-        height: auto;
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .hero-right img {
-        margin-top: 40px;
-        width: 100%;
-        max-width: 380px;
-    }
-
-    .stats-bar {
-        gap: 40px;
-        padding: 30px 5%;
-    }
-
-    .stat-item h3 {
-        font-size: 32px;
-    }
-
-    .stat-item p {
-        font-size: 14px;
-    }
-
-    .technology {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .tech-left h2 {
-        font-size: 34px;
-    }
-
-    .investor-highlights {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =========================
    CONTEXT-AWARE HEADING VISIBILITY FIX
 ========================= */
-
-/* Headings on Light Sections */
 .why-now h2, .why-now h3,
 .future-section h2, .future-section h3,
 .growth-section h2, .growth-section h3,
@@ -1665,7 +531,6 @@ nav ul li a:hover {
     color: #0f172a !important;
 }
 
-/* Headings on Dark Sections (Investor Section, Features, Tech & Footer) */
 .investor-section h2, .investor-section h3,
 .features h2, .features h3,
 .technology h2, .technology h3,
@@ -1673,8 +538,9 @@ nav ul li a:hover {
     color: #ffffff !important;
 }
 
-
-/* Full Cover Video Hero Layout */
+/* =========================
+   FULL COVER VIDEO HERO LAYOUT
+========================= */
 .hero-video-layout {
     position: relative;
     min-height: 100vh;
@@ -1732,7 +598,6 @@ nav ul li a:hover {
     color: #cbd5e1 !important;
 }
 
-/* Secondary Button Styling for Video Background */
 .btn-secondary-dark {
     background: rgba(255, 255, 255, 0.1) !important;
     color: #ffffff !important;
@@ -1745,7 +610,6 @@ nav ul li a:hover {
     color: #0f172a !important;
 }
 
-/* Mini Stats Dark Mode */
 .hero-stats-dark {
     border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
@@ -1758,7 +622,6 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* Right Side Floating Badges Overlay */
 .hero-video-badges {
     position: relative;
     z-index: 2;
@@ -1767,7 +630,15 @@ nav ul li a:hover {
     gap: 20px;
 }
 
+/* =========================
+   RESPONSIVE MEDIA QUERIES
+========================= */
 @media (max-width: 992px) {
+    .rizz-footer-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
     .hero-video-layout {
         flex-direction: column;
         align-items: flex-start;
@@ -1776,89 +647,7 @@ nav ul li a:hover {
     .hero-video-badges {
         margin-top: 30px;
     }
-}
 
-
-@media (max-width: 768px) {
-  .navbar {
-    height: auto !important;
-    padding: 12px 18px !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-
-  /* Style the 3-line Hamburger Button */
-  .hamburger-btn {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-  }
-
-  .hamburger-btn span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #00c853;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  /* FORCE hide navigation links by default on mobile */
-  nav ul, .nav-links {
-    display: none !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    background: #ffffff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 20px 0;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border-radius: 0 0 20px 20px;
-    list-style: none;
-    text-align: center;
-    z-index: 999;
-  }
-
-  /* When JavaScript adds .active class, show the menu */
-  nav ul.active, .nav-links.active {
-    display: flex !important;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  nav ul li a {
-    font-size: 16px !important;
-    color: #0f172a !important;
-    font-weight: 600;
-  }
-
-  .nav-right {
-    display: none; 
-  }
-}
-
-/* Hide hamburger button on desktop screens */
-@media (min-width: 769px) {
-  .hamburger-btn {
-    display: none !important;
-  }
-}
-
-
-/* Mobile Responsiveness for Technology */
-@media (max-width: 992px) {
     .tech-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1882,5 +671,101 @@ nav ul li a:hover {
         width: 100%;
         margin-top: 12px;
         justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto !important;
+        padding: 12px 18px !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .hamburger-btn {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #00c853;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    nav ul, .nav-links {
+        display: none !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        background: #ffffff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-radius: 0 0 20px 20px;
+        list-style: none;
+        text-align: center;
+        z-index: 999;
+    }
+
+    nav ul.active, .nav-links.active {
+        display: flex !important;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px !important;
+        color: #0f172a !important;
+        font-weight: 600;
+    }
+
+    .nav-right {
+        display: none; 
+    }
+
+    .investor-content h2 {
+        font-size: 34px;
+    }
+    
+    .fleet-investment-steps {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .inv-step-arrow {
+        transform: rotate(90deg);
+    }
+
+    .rizz-footer-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .rizz-footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger-btn {
+        display: none !important;
     }
 }
