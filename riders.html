@@ -701,14 +701,15 @@
             <li><a href="investors.html">Fleet Owners</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        
-        <!-- Mobile Hamburger Button -->
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-    </nav>
+        </nav>
+
+       <!-- Mobile Hamburger Button -->
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  
 
         <div class="nav-right">
             <a href="contact.html" class="btn-primary">Get Started</a>
@@ -1063,18 +1064,20 @@
     });
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const navMenu = document.querySelector(".nav-links") || document.querySelector(".nav-menu") || document.querySelector("nav ul");
+<!-- Embedded Hamburger Menu Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const navMenu = document.querySelector(".nav-links") || document.querySelector(".nav-menu") || document.querySelector("nav ul");
 
-    if (hamburgerBtn && navMenu) {
-      hamburgerBtn.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
+        if (hamburgerBtn && navMenu) {
+          hamburgerBtn.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+          });
+        }
       });
-    }
-  });
-</script>
+    </script>
+
 
 </body>
 </html>
