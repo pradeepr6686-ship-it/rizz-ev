@@ -662,19 +662,9 @@
   }
 
     /* Show links when JavaScript adds the 'active' class */
-    @media (max-width: 768px) {
     .nav-links.active {
         display: flex !important;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff; /* Must have a solid background, not transparent! */
-        z-index: 9999 !important;   /* Forces it to sit on top of everything */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-}
-
 
      .hamburger-btn {
     display: flex !important;
@@ -733,7 +723,7 @@
         <li><a href="investors.html">Fleet Owners</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
-    
+    </nav>
     
     <!-- Mobile Menu Toggle Button -->
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
@@ -741,7 +731,6 @@
   <span></span>
   <span></span>
 </button>
- </nav>
 
 
     
@@ -1009,7 +998,7 @@
 
    </script>
 
-         <!-- Embedded Hamburger Menu Script -->
+        <!-- Embedded Hamburger Menu Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const hamburgerBtn = document.getElementById("hamburgerBtn");
