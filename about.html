@@ -645,7 +645,7 @@
 
 
     /* Hide links by default on mobile */
-    .nav-links {
+   nav ul,.nav-links {
       display: none !important;
     flex-direction: column !important;
     width: 100% !important;
@@ -662,9 +662,25 @@
   }
 
     /* Show links when JavaScript adds the 'active' class */
-    .nav-links.active {
-        display: flex !important;
+    nav ul.active, .nav-links.active {
+    display: flex !important;
+}
+
+   nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
+
+     nav ul li {
+    margin: 10px 0;
+  }
+
+    nav ul li a {
+    font-size: 16px !important;
+    color: #0f172a !important;
+    font-weight: 600;
+  }
 
      .hamburger-btn {
     display: flex !important;
@@ -733,12 +749,8 @@
   <span></span>
 </button>
 
- </nav>
 
-
-    
-
-    <div class="nav-right">
+<div class="nav-right">
         <a href="index.html#apply" class="btn-primary">Get Started</a>
     </div>
 </header>
