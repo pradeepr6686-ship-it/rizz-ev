@@ -733,7 +733,7 @@
         <li><a href="investors.html">Fleet Owners</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
-    </nav>
+    
     
     <!-- Mobile Menu Toggle Button -->
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
@@ -741,6 +741,7 @@
   <span></span>
   <span></span>
 </button>
+ </nav>
 
 
     
@@ -1008,23 +1009,19 @@
 
    </script>
 
-         <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const navMenu = document.getElementById("navMenu");
+         <!-- Embedded Hamburger Menu Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const navMenu = document.querySelector(".nav-links") || document.querySelector(".nav-menu") || document.querySelector("nav ul");
 
-    console.log("Hamburger found:", hamburgerBtn); // Will show null if ID doesn't match
-    console.log("NavMenu found:", navMenu);       // Will show null if ID doesn't match
-
-    if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener("click", function () {
-            console.log("Hamburger clicked!");
+        if (hamburgerBtn && navMenu) {
+          hamburgerBtn.addEventListener("click", function () {
             navMenu.classList.toggle("active");
-            console.log("navMenu classes now:", navMenu.className);
-        });
-    }
-});
-</script>
+          });
+        }
+      });
+    </script>
 
 
 </body>
