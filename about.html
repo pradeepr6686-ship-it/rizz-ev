@@ -643,9 +643,10 @@
     align-items: center !important;
   }
 
+
     /* Hide links by default on mobile */
     .nav-links {
-        display: none !important;
+      display: none !important;
     flex-direction: column !important;
     width: 100% !important;
     background: #ffffff;
@@ -661,11 +662,21 @@
   }
 
     /* Show links when JavaScript adds the 'active' class */
+    @media (max-width: 768px) {
     .nav-links.active {
         display: flex !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff; /* Must have a solid background, not transparent! */
+        z-index: 9999 !important;   /* Forces it to sit on top of everything */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+}
 
-   .hamburger-btn {
+
+     .hamburger-btn {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
@@ -685,7 +696,8 @@
     background-color: #00c853;
     border-radius: 2px;
     transition: all 0.3s ease;
-  }
+    }
+}
 
 /* Ensure links are always visible on desktop screens */
 @media (min-width: 769px) {
@@ -1001,14 +1013,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const navMenu = document.getElementById("navMenu");
 
+    console.log("Hamburger found:", hamburgerBtn); // Will show null if ID doesn't match
+    console.log("NavMenu found:", navMenu);       // Will show null if ID doesn't match
+
     if (hamburgerBtn && navMenu) {
         hamburgerBtn.addEventListener("click", function () {
+            console.log("Hamburger clicked!");
             navMenu.classList.toggle("active");
+            console.log("navMenu classes now:", navMenu.className);
         });
     }
 });
 </script>
-
 
 
 </body>
