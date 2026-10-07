@@ -1016,18 +1016,23 @@
    </script>
 
         <!-- Embedded Hamburger Menu Script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const hamburgerBtn = document.getElementById("hamburgerBtn");
-        const navMenu = document.querySelector(".nav-links") || document.querySelector(".nav-menu") || document.querySelector("nav ul");
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const navMenu = document.getElementById("navMenu");
 
-        if (hamburgerBtn && navMenu) {
-          hamburgerBtn.addEventListener("click", function () {
+    console.log("Hamburger found:", hamburgerBtn); // Will show null if ID doesn't match
+    console.log("NavMenu found:", navMenu);       // Will show null if ID doesn't match
+
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener("click", function () {
+            console.log("Hamburger clicked!");
             navMenu.classList.toggle("active");
-          });
-        }
-      });
-    </script>
+            console.log("navMenu classes now:", navMenu.className);
+        });
+    }
+});
+</script>
 
 
 </body>
