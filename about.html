@@ -725,32 +725,30 @@
 <body>
 
     <!-- NAVBAR -->
+<!-- NAVBAR -->
 <header class="navbar">
     <a href="#" class="logo">
         <img src="images/logo.png" alt="RIZZ EV Logo">
     </a>
 
-   
-
-   <nav>
-    <ul class="nav-links" id="navMenu">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="riders.html">Rider Portal</a></li>
-        <li><a href="investors.html">Fleet Owners</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <nav>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="riders.html">Rider Portal</a></li>
+            <li><a href="investors.html">Fleet Owners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile Menu Toggle Button (Inside <nav> to match working structure) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
-    
-    <!-- Mobile Menu Toggle Button -->
-<button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
 
-
-<div class="nav-right">
+    <div class="nav-right">
         <a href="index.html#apply" class="btn-primary">Get Started</a>
     </div>
 </header>
@@ -979,7 +977,7 @@
 
     <script src="script.js"></script>
 
-    </script>
+   
 
     <script>
     // 1. Force browser to handle manual scroll restoration so it doesn't auto-remember on refresh
@@ -1013,22 +1011,17 @@
         }
     });
 
-   </script>
+  </script>
 
         <!-- Embedded Hamburger Menu Script -->
-   <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const navMenu = document.getElementById("navMenu");
 
-    console.log("Hamburger found:", hamburgerBtn); // Will show null if ID doesn't match
-    console.log("NavMenu found:", navMenu);       // Will show null if ID doesn't match
-
     if (hamburgerBtn && navMenu) {
         hamburgerBtn.addEventListener("click", function () {
-            console.log("Hamburger clicked!");
             navMenu.classList.toggle("active");
-            console.log("navMenu classes now:", navMenu.className);
         });
     }
 });
