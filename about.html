@@ -726,6 +726,55 @@
     }
 }
 
+@media (max-width: 768px) {
+    /* Force the hamburger button to show on mobile */
+    .hamburger-btn {
+        display: flex !important; 
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .hamburger-btn span {
+        display: block !important;
+        width: 100%;
+        height: 3px;
+        background-color: #00e676; /* Or your preferred icon color */
+        border-radius: 2px;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger-btn {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none !important; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0d131f; /* Match your dark theme background */
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    /* Shows the options when clicked */
+    .nav-links.active {
+        display: flex !important; 
+    }
+}
+
     </style>
 </head>
 <body>
@@ -739,21 +788,22 @@
    
 
    <nav>
-    <ul class="nav-links" id="navMenu">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="riders.html">Rider Portal</a></li>
-        <li><a href="investors.html">Fleet Owners</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </nav>
-    
-    <!-- Mobile Menu Toggle Button -->
-<button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+  <!-- Must have id="navMenu" -->
+  <ul class="nav-links" id="navMenu">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="riders.html">Rider Portal</a></li>
+    <li><a href="investors.html">Fleet Owners</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  
+  <!-- Must have id="hamburgerBtn" -->
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
 
 
 <div class="nav-right">
