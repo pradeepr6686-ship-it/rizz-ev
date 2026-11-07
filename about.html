@@ -553,10 +553,7 @@
             .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
         }
 
-        @media (max-width: 768px) {
-            .navbar nav { display: none; }
-        }
-
+        
         @media (max-width: 600px) {
             .rizz-footer-wrapper { grid-template-columns: 1fr; }
             .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
@@ -633,36 +630,13 @@
 } 
  
 /* Base mobile styles for the links */
-@media (max-width: 768px) {
-     .navbar {
-    height: auto !important;
-    padding: 12px 18px !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
 
 
-    /* Hide links by default on mobile */
-   nav ul,.nav-links {
-      display: none !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    background: #ffffff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 20px 0;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border-radius: 0 0 20px 20px;
-    list-style: none;
-    text-align: center;
-    z-index: 999;
-  }
+
+    
 
     /* Show links when JavaScript adds the 'active' class */
-    nav ul.active, .nav-links.active {
+    nav ul.active {
     display: flex !important;
 }
 
@@ -682,56 +656,32 @@
     font-weight: 600;
   }
 
-    @media (max-width: 768px) {
-   .hamburger-btn {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-  }
-
-  .hamburger-btn span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #00c853;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-}
+   
 
 
-/* Ensure links are always visible on desktop screens */
-@media (min-width: 769px) {
-    .nav-links {
-        display: flex !important;
-        flex-direction: row;
-        gap: 20px;
-        list-style: none;
-    }
     
     .hamburger-btn {
     display: none !important;
   }
-}
-}
+
+
+
 
 @media (max-width: 768px) {
     .navbar {
+        position: relative !important;
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        position: relative !important;
         padding: 12px 18px !important;
     }
 
-    /* FORCE the hamburger button to be visible */
+    /* Make sure the nav wrapper stays visible */
+    .navbar nav {
+        display: block !important;
+    }
+
+    /* Hamburger Button */
     .hamburger-btn {
         display: flex !important;
         flex-direction: column !important;
@@ -742,7 +692,7 @@
         border: none !important;
         cursor: pointer !important;
         padding: 0 !important;
-        z-index: 1000 !important;
+        z-index: 1001 !important;
     }
 
     .hamburger-btn span {
@@ -753,7 +703,7 @@
         border-radius: 2px !important;
     }
 
-    /* Hide nav links by default, show when .active is added */
+    /* Mobile Dropdown Menu (Hidden by default) */
     .nav-links {
         display: none !important;
         flex-direction: column !important;
@@ -761,51 +711,16 @@
         top: 100% !important;
         left: 0 !important;
         width: 100% !important;
-        background-color: #ffffff !important;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+        background: #0d131f !important;
         padding: 20px 0 !important;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5) !important;
+        border-radius: 0 0 16px 16px !important;
         list-style: none !important;
         text-align: center !important;
-        z-index: 999 !important;
+        z-index: 1000 !important;
     }
 
-    .nav-links.active {
-        display: flex !important;
-    }
-
-    .nav-links li {
-        margin: 10px 0 !important;
-    }
-
-    .nav-links li a {
-        font-size: 16px !important;
-        color: #0f172a !important;
-        font-weight: 600 !important;
-    }
-
-    .nav-right {
-        display: none !important;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Hide the links by default on mobile */
-    .nav-links {
-        display: none !important;
-        flex-direction: column !important;
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background-color: #0d131f !important; /* Matches your dark theme */
-        box-shadow: 0 15px 30px rgba(0,0,0,0.3) !important;
-        padding: 20px 0 !important;
-        list-style: none !important;
-        text-align: center !important;
-        z-index: 999 !important;
-    }
-
-    /* THIS IS WHAT SHOWS THE OPTIONS WHEN CLICKED */
+    /* Show dropdown menu on click */
     .nav-links.active {
         display: flex !important;
     }
@@ -820,7 +735,12 @@
         font-weight: 600 !important;
         text-decoration: none !important;
     }
+
+    .nav-right {
+        display: none !important;
+    }
 }
+
 
     </style>
 </head>
@@ -828,11 +748,18 @@
 
     <!-- NAVBAR -->
 <header class="navbar">
-    <a href="#" class="logo">
+    <a href="index.html#home" class="logo">
         <img src="images/logo.png" alt="RIZZ EV Logo">
     </a>
 
     <nav>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <ul class="nav-links" id="navMenu">
             <li><a href="index.html#home">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -841,13 +768,6 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    
-    <!-- Mobile Menu Toggle Button (Direct child of navbar) -->
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
 
     <div class="nav-right">
         <a href="index.html#apply" class="btn-primary">Get Started</a>
@@ -1114,13 +1034,14 @@
 
   </script>
 
-       <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const navMenu = document.getElementById("navMenu");
 
     if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener("click", function () {
+        hamburgerBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
             navMenu.classList.toggle("active");
         });
     }
