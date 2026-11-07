@@ -28,7 +28,7 @@
             background-color: #080c14;
             color: #cbd5e1;
             font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .container {
@@ -279,33 +279,131 @@
             .rizz-footer-wrapper { grid-template-columns: 1fr 1fr; gap: 40px; }
         }
 
-        @media (max-width: 768px) {
-            .navbar nav { display: none; }
-        }
+        
 
         @media (max-width: 600px) {
             .rizz-footer-wrapper { grid-template-columns: 1fr; }
             .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
+
+
+         /* Show links when JavaScript adds the 'active' class */
+   
+ nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+   
+
+      nav ul li {
+    margin: 10px 0;
+  }
+
+     nav ul li a {
+    font-size: 16px !important;
+    color: #0f172a !important;
+    font-weight: 600;
+  }
+
+   
+
+
+@media (max-width: 768px) {
+     .navbar {
+    height: auto !important;
+    padding: 12px 18px !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+    /* Make sure the nav wrapper stays visible */
+    .navbar nav {
+        display: block !important;
+    }
+
+    /* Hamburger Button */
+    .hamburger-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+  }
+
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #00c853;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+    
+
+    /* Mobile Dropdown Menu (Hidden by default) */
+    nav ul, .nav-links {
+    display: none !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-radius: 0 0 20px 20px;
+    list-style: none;
+    text-align: center;
+    z-index: 999;
+  }
+
+    /* Show dropdown menu on click */
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-right {
+    display: none; 
+  }
+}
+
     </style>
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
-        <a href="index.html#home" class="logo">
-            <img src="images/logo.png" alt="RIZZ EV Logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="riders.html">Rider Portal</a></li>
-                <li><a href="investors.html">Fleet Owners</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="nav-right">
+    <!-- NAVBAR -->
+<header class="navbar">
+    <a href="index.html#home" class="logo">
+        <img src="images/logo.png" alt="RIZZ EV Logo">
+    </a>
+
+    <nav>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="riders.html">Rider Portal</a></li>
+            <li><a href="investors.html">Fleet Owners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="nav-right">
             <a href="riders.html" class="btn-primary">Apply for Bike</a>
         </div>
     </header>
@@ -484,6 +582,20 @@
             window.scrollTo(0, history.state.scroll);
         }
     });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            navMenu.classList.toggle("active");
+        });
+    }
+});
 </script>
 
 </body>
