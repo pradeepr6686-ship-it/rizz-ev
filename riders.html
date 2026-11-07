@@ -687,13 +687,20 @@
 </head>
 <body>
 
-    <!-- NAVBAR (MATCHES INDEX.HTML) -->
-    <header class="navbar">
-    <a href="index.html" class="logo">
+   <!-- NAVBAR -->
+<header class="navbar">
+    <a href="index.html#home" class="logo">
         <img src="images/logo.png" alt="RIZZ EV Logo">
     </a>
 
     <nav>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <ul class="nav-links" id="navMenu">
             <li><a href="index.html#home">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -701,20 +708,12 @@
             <li><a href="investors.html">Fleet Owners</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        </nav>
+    </nav>
 
-       <!-- Mobile Hamburger Button -->
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  
-
-        <div class="nav-right">
-            <a href="contact.html" class="btn-primary">Get Started</a>
-        </div>
-    </header>
+    <div class="nav-right">
+        <a href="index.html#apply" class="btn-primary">Get Started</a>
+    </div>
+</header>
 
     <!-- FULL-WIDTH HERO SECTION WITH BACKGROUND VIDEO -->
     <section class="hero-video-layout">
@@ -1001,6 +1000,8 @@
         </div>
     </footer>
 
+<script src="script.js"></script>
+
     <!-- INTERACTIVE CALCULATOR JAVASCRIPT -->
     <script>
         const slider = document.getElementById('kmSlider');
@@ -1065,6 +1066,7 @@
 </script>
 
 <!-- Embedded Hamburger Menu Script -->
+   <!-- Embedded Hamburger Menu Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const hamburgerBtn = document.getElementById("hamburgerBtn");
@@ -1077,6 +1079,7 @@
         }
       });
     </script>
+
 
 
 </body>
