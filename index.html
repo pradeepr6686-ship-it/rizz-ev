@@ -734,18 +734,19 @@
 <!-- Your existing page content and closing elements -->
 
     <!-- Embedded Hamburger Menu Script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const hamburgerBtn = document.getElementById("hamburgerBtn");
-        const navMenu = document.querySelector(".nav-links") || document.querySelector(".nav-menu") || document.querySelector("nav ul");
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const navMenu = document.getElementById("navMenu");
 
-        if (hamburgerBtn && navMenu) {
-          hamburgerBtn.addEventListener("click", function () {
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
             navMenu.classList.toggle("active");
-          });
-        }
-      });
-    </script>
+        });
+    }
+});
+</script>
 
 </body>
 </html>
