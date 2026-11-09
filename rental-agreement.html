@@ -296,30 +296,12 @@
             .rizz-footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
 
-         /* Show links when JavaScript adds the 'active' class */
-   
- nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-   
-
-      nav ul li {
-    margin: 10px 0;
-  }
-
-     nav ul li a {
-    font-size: 16px !important;
-    color: #0f172a !important;
-    font-weight: 600;
-  }
-
-   
-
+         /* =========================================
+   GLOBAL HAMBURGER & MOBILE NAVBAR STYLES
+   ========================================= */
 
 @media (max-width: 768px) {
-     .navbar {
+  .navbar {
     height: auto !important;
     padding: 12px 18px !important;
     flex-direction: row !important;
@@ -328,13 +310,9 @@
     align-items: center !important;
   }
 
-    /* Make sure the nav wrapper stays visible */
-    .navbar nav {
-        display: block !important;
-    }
 
-    /* Hamburger Button */
-    .hamburger-btn {
+/* Style the 3-line Hamburger Button */
+.hamburger-btn {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
@@ -355,10 +333,17 @@
     border-radius: 2px;
     transition: all 0.3s ease;
   }
-    
 
-    /* Mobile Dropdown Menu (Hidden by default) */
-    nav ul, .nav-links {
+
+/* Mobile Screen Breakpoint Rules */
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none !important;
+  }
+}
+
+  /* FORCE hide navigation links by default on mobile */
+  nav ul, .nav-links {
     display: none !important;
     flex-direction: column !important;
     width: 100% !important;
@@ -374,12 +359,22 @@
     z-index: 999;
   }
 
-    /* Show dropdown menu on click */
-    .nav-links.active {
-        display: flex !important;
-    }
+  /* When JavaScript adds .active class, show the menu */
+  .nav-links.active {
+    display: flex !important;
+  }
 
-    .nav-right {
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 16px !important;
+    color: #0f172a !important;
+    font-weight: 600;
+  }
+
+  .nav-right {
     display: none; 
   }
 }
